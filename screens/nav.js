@@ -14,6 +14,7 @@ import Screen2 from "./screen2.js";
 import Screen3 from "./screen3.js";
 import Screen4 from "./screen4.js";
 import PdfScreen from "./pdf.js";
+import Screen5 from './screen5';
 import {createStackNavigator, createAppContainer} from 'react-navigation';
 
 const MainNavigator = createStackNavigator({
@@ -23,6 +24,7 @@ const MainNavigator = createStackNavigator({
   Screen3: {screen: Screen3},
   Screen4: {screen: Screen4},
   pdfScreen: {screen: PdfScreen}
+  Screen5: {screen: Screen5},
 });
 
 const AppNav = createAppContainer(MainNavigator);

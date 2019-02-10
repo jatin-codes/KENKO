@@ -95,7 +95,6 @@ def enableProguardInReleaseBuilds = false
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
-    buildToolsVersion rootProject.ext.buildToolsVersion
 
     defaultConfig {
         applicationId "com.xdhacks"
@@ -103,6 +102,7 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
     }
     splits {
         abi {
@@ -139,6 +139,9 @@ dependencies {
     implementation project(':react-native-pdf-view')
     implementation project(':react-native-pdf-lib')
     implementation project(':react-native-pdf')
+    implementation project(':react-native-text-detector')
+    implementation project(':react-native-camera')
+    implementation project(':@terrylinla_react-native-sketch-canvas')
     implementation project(':react-native-image-base64')
     implementation project(':react-native-html-to-pdf')
     implementation project(':@terrylinla_react-native-sketch-canvas')
@@ -146,6 +149,12 @@ dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"
     implementation "com.facebook.react:react-native:+"  // From node_modules
+    implementation 'com.google.firebase:firebase-core:16.0.1'
+    implementation 'com.google.firebase:firebase-ml-vision:17.0.0'
+
+    implementation (project(':react-native-text-detector')) {
+        exclude group: 'com.google.firebase'
+    }
 }
 
 // Run this once to be able to run the application with BUCK
@@ -154,3 +163,7 @@ task copyDownloadableDepsToLibs(type: Copy) {
     from configurations.compile
     into 'libs'
 }
+//
+apply plugin: 'com.google.gms.google-services'
+//// Work around for onesignal-gradle-plugin compatibility
+com.google.gms.googleservices.GoogleServicesPlugin.config.disableVersionCheck = true

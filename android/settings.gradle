@@ -21,6 +21,10 @@ include ':react-native-pdf-view'
 project(':react-native-pdf-view').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-pdf-view/android')
 include ':rn-fetch-blob'
 project(':rn-fetch-blob').projectDir = new File(rootProject.projectDir, '../node_modules/rn-fetch-blob/android')
+include ':react-native-text-detector'
+project(':react-native-text-detector').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-text-detector/android')
+include ':react-native-camera'
+project(':react-native-camera').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-camera/android')
 include ':@terrylinla_react-native-sketch-canvas'
 project(':@terrylinla_react-native-sketch-canvas').projectDir = new File(rootProject.projectDir, '../node_modules/@terrylinla/react-native-sketch-canvas/android')
 include ':react-native-image-base64'
@@ -34,3 +38,5 @@ project(':react-native-gesture-handler').projectDir = new File(rootProject.proje
 include ':PDFView'
 project(':PDFView').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-pdf-view/android')
 include ':app'
+include ':react-native-text-detector'
+project(':react-native-text-detector').projectDir = new File(rootProject.projectDir, 	'../node_modules/react-native-text-detector/android')
