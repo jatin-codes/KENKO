@@ -25,6 +25,7 @@ import DateTimePicker from "react-native-modal-datetime-picker";
 const MainNavigator = createStackNavigator(
   {
     Home: { screen: HomeScreen },
+    Splash: { screen: Splash },
     Screen1: { screen: Screen1 },
     Screen2: { screen: Screen2 },
     Screen3: { screen: Screen3 },
