@@ -2,13 +2,19 @@ import React from 'react';
 import {
   View,
   Text,
-  StyleSheet
+  StyleSheet,
+  Slider
 } from 'react-native';
 
-const RAPID3PNCard = ({ item, onSelect }) => (
+const RAPID3PNCard = ({ item, onSelect, sliderValue }) => (
   <View style={styles.container}>
     <Text style={styles.title}>{ item.text }</Text>
-    <Text style={styles.dragBar}>TODO: add icon here to prompt user to drag</Text>
+    <Slider
+      minimumValue={0}
+      maximumValue={10}
+      step={0.5}
+      onValueChange={(value) => onSelect('pn', 0, value)}/>
+    <Text style={styles.title}>{sliderValue}</Text>
   </View>
 );
 
@@ -20,6 +26,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     padding: 20,
     fontSize: 20,
+    color: '#5580E1'
   },
   dragBar: {
     height: 80,

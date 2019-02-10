@@ -5,17 +5,30 @@ import {
   View,
   Text,
   StyleSheet,
+  ScrollView,
   SafeAreaView,
   TouchableOpacity
 } from 'react-native';
+import UserInfo from './UserInfo';
+import Header from './Header';
 
 export default class HomeScreen extends Component {
+
+  static navigationOptions = {
+    header: null,
+  };
+
   constructor() {
     super();
   }
   render() {
     return (
-      <SafeAreaView style={styles.container}>
+      <ScrollView style={styles.contentContainer}>
+        <Header/>
+        <View style={styles.welcome}>
+          <Text style={styles.welcome}>Welcome back, John!</Text>
+        </View>
+        <UserInfo/>
         <TouchableOpacity onPress={() => this.props.navigation.navigate('Screen1')} style={styles.buttonStyle}>
           <Text> Screen 1 </Text>
         </TouchableOpacity>
@@ -28,6 +41,7 @@ export default class HomeScreen extends Component {
         <TouchableOpacity onPress={() => this.props.navigation.navigate('Screen5')} style={styles.buttonStyle}>
           <Text> Screen 5 </Text>
         </TouchableOpacity>
+<<<<<<< HEAD
         <TouchableOpacity onPress={() => this.props.navigation.navigate('Screen6')} style={styles.buttonStyle}>
           <Text> Screen 6 </Text>
         </TouchableOpacity>
@@ -35,11 +49,22 @@ export default class HomeScreen extends Component {
           <Text> Screen 4 </Text>
         </TouchableOpacity>
       </SafeAreaView>
+=======
+
+      </ScrollView>
+>>>>>>> master2
     );
   }
 }
 
 const styles = StyleSheet.create({
+
+
+  contentContainer: {
+    paddingVertical: 20,
+    backgroundColor: "#769EF5",
+  }
+  ,
   container: {
     flex: 1,
     justifyContent: 'space-between',
@@ -48,22 +73,18 @@ const styles = StyleSheet.create({
   },
   welcome: {
     fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
+    textAlign: 'left',
+    margin: 5,
+    backgroundColor: '#f3f3f3',
   },
   buttonStyle: {
     alignSelf: 'stretch',
-    backgroundColor: '#365C80',
+    backgroundColor: '#f3f3f3',
     borderRadius:5,
     borderWidth:1,
-    marginLeft:'5%',
-    marginRight:'5%',
+    margin:'5%',
+    padding: '2%',
     justifyContent: 'center',
-    height: 40
+    height: 60
   }
 });

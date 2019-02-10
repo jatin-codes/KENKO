@@ -10,32 +10,40 @@ import LottiePanel from './LottiePanel';
 // Lottie:
 // https://github.com/react-native-community/lottie-react-native
 
-const RAPID3FNCard = ({ id, item, onSelect }) => (
+const RAPID3FNCard = ({ id, item, onSelect, selectedAnswer, answers }) => (
   <View style={styles.container}>
-    <LottiePanel url="../assets/xd-done.json" />
+    <LottiePanel
+      backgroundStyle={lottieStyle.container}
+      source={require('../assets/xd-done.json')}
+      loop={false}
+    />
     <Text style={styles.title}>{item.text}</Text>
     {item.answers.map((option, id) => (
-      <CardButton key={id} text={option.text} onSelect={() => onSelect('fn', id, option.points)}/>
+      <CardButton
+        key={id}
+        text={option.text}
+        isSelected={selectedAnswer === option.points}
+        onPress={() => onSelect('fn', item.id - 1, option.points, answers)}/>
     ))}
-    <Text style={styles.dragBar}>TODO: add icon here to prompt user to drag</Text>
   </View>
 );
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'flex-end'
+    justifyContent: 'flex-end',
   },
   title: {
     textAlign: 'center',
     padding: 20,
     fontSize: 20,
-  },
-  dragBar: {
-    height: 80,
-    marginTop: 20,
-    borderTopColor: '#343434',
-    borderTopWidth: 1,
+    color: '#5580E1'
+  }
+});
+
+const lottieStyle = StyleSheet.create({
+  container: {
+    backgroundColor: '#78a3eb'
   }
 });
 

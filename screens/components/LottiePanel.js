@@ -16,12 +16,12 @@ import LottieView from 'lottie-react-native';
  *
  * **/
 
-const LottiePanel = ({ url, onPress }) => (
-  <View style={styles.container}>
+const LottiePanel = ({ backgroundStyle, source, onPress, loop }) => (
+  <View style={{...styles.container, ...backgroundStyle}}>
     <LottieView
-      source={require('../assets/xd-done.json')}
+      source={source}
       autoPlay
-      loop
+      loop={loop}
     />
   </View>
 );

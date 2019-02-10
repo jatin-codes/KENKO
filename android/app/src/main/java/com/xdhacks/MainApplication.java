@@ -4,6 +4,7 @@ import com.fetchsky.RNTextDetector.RNTextDetectorPackage;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.BV.LinearGradient.LinearGradientPackage;
 import com.vinzscam.reactnativefileviewer.RNFileViewerPackage;
 import com.airbnb.android.react.lottie.LottiePackage;
 import com.fetchsky.RNTextDetector.RNTextDetectorPackage;
@@ -33,6 +34,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new LinearGradientPackage(),
             new RNFileViewerPackage(),
             new LottiePackage(),
             new RNTextDetectorPackage(),
