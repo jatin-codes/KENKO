@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Text, View } from 'react-native';
+import { Button, Text, View, Vibration } from 'react-native';
 import { RNCamera } from 'react-native-camera';
 
 class Screen5 extends Component {
@@ -19,12 +19,14 @@ class Screen5 extends Component {
   }
 
   onBarCodeRead(scanResult) {
+    Vibration.vibrate(800);
     console.warn(scanResult.type);
     console.warn(scanResult.data);
     if (scanResult.data != null) {
 	if (!this.barcodeCodes.includes(scanResult.data)) {
 	  this.barcodeCodes.push(scanResult.data);
-	  console.warn('onBarCodeRead call');
+    console.warn('onBarCodeRead call');
+    Vibration.cancel();
 	}
     }
     return;
