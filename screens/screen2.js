@@ -24,11 +24,10 @@ export default class screen2 extends Component {
   sendText = () => {
     const { text } = this.state;
     //pass text message GET variables via query string
-    console.log("WORKS?");
+    console.warn("WORKS?" + text.recipient);
+    console.warn(text.textmessage);
     fetch(
-      `https://xdhacks-server.netlify.com/.netlify/functions/sendText?number=${
-        text.recipient
-      }}&body=${text.textmessage}`
+      "https://xdhacks-server.netlify.com/.netlify/functions/sendText?number=+16047158724&body=" + text.textmessage
     ).catch(err => console.error(err));
   };
 
@@ -41,13 +40,6 @@ export default class screen2 extends Component {
   };
 
   render() {
-    // const { text } = this.state;
-    // const spacer = {
-    //   margin: 8
-    // }
-    // const textArea = {
-    //   borderRadius: 4
-    // }
     return (
       <SafeAreaView style={styles.container}>
         <StatusBar barStyle="light-content" />
@@ -62,25 +54,8 @@ export default class screen2 extends Component {
                   style={styles.logo}
                   source={require("../images/kenko.png")}
                 />
-                {/* <Text style={styles.title}>Account Information</Text> */}
               </View>
               <View style={styles.infoContainer}>
-                {/* <TextInput style={styles.input}
-                  placeholder="Enter username/email"
-                  placeholderTextColor='rgba(255,255,255,0.8)'
-                  keyboardType='email-address'
-                  returnKeyType='next'
-                  autoCorrect={false}
-                  onSubmitEditing={() => this.refs.txtPassword.focus()}
-                />
-                <TextInput style={styles.input}
-                  placeholder="Enter password"
-                  placeholderTextColor='rgba(255,255,255,0.8)'
-                  returnKeyType='go'
-                  secureTextEntry
-                  autoCorrect={false}
-                  ref={"txtPassword"}
-                /> */}
                 <TouchableOpacity
                   onPress={() => this.sendText()}
                   style={styles.buttonContainer}

@@ -71,6 +71,10 @@ export default class DateTimePickerTester extends Component {
     Alert.alert("Selected country is : " + this.state.PickerSelectedVal);
   };
 
+  navigate = () => {
+    this.props.navigation.navigate("Screen2");
+  };
+
   render() {
     return (
       <SafeAreaView style={styles.container}>
@@ -121,6 +125,10 @@ export default class DateTimePickerTester extends Component {
                   onCancel={this.hideTimePicker}
                   datePickerModeAndroid="spinner"
                   mode="time"
+                />
+                <Button
+                  title="Back to Screen2"
+                  onPress={() => this.navigate()}
                 />
               </View>
             </View>
