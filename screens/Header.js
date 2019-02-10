@@ -5,7 +5,6 @@ export default class Header extends Component {
     render (){
         return (
             <View style={styles.container}>
-                {/* <View style={{flex: 1, background: 'red', width: 200, height: 200}} /> */}
                 <Image style={styles.imagefile} source={require('./assets/images/kenko2.png')}/>
             </View>
         )
