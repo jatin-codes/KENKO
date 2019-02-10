@@ -183,4 +183,3 @@ export const calculateRAPID3Score = (fn, pn, ptge) => {
 
   return score;
 };
-
