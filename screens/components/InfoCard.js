@@ -25,7 +25,7 @@ const InfoCard = ({ type, results, navigation, onSaveImage }) => {
         {!!results && <Text style={styles.text}>{END_TEXT(results.total[0])}</Text>}
         <CardButton text="Finish" onPress={() => {
           onSaveImage();
-          navigation.navigate('Home');
+          // navigation.navigate('Home');
         }}/>
       </View>
     )

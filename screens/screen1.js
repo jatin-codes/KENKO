@@ -98,6 +98,7 @@ export default class Screen2 extends Component {
     this.handleSaveImage = this.handleSaveImage.bind(this);
     this.handleSnapToItem = this.handleSnapToItem.bind(this);
     this.calculateScore = this.calculateScore.bind(this);
+    // this.saveAsync = this.saveAsync.bind(this);
   }
 
   static navigationOptions = {
@@ -120,6 +121,16 @@ export default class Screen2 extends Component {
     }
   }
 
+  saveAsync = async (text, images) => {
+    let data = {
+      text: text,
+      images: images,
+    };
+    console.warn('text');
+    await AsyncStorage.setItem('data', JSON.stringify(data));
+    this.props.navigation.navigate('Screen4');
+  };
+
   calculateScore(fn, pn, ptge) {
     const newFN = fn.map(i => i < 0 ? 0 : i); // safeguard against bugs
     const RAPID3Score = calculateRAPID3Score(newFN, pn, ptge);
@@ -129,9 +140,36 @@ export default class Screen2 extends Component {
       ptge: ptge,
       total: RAPID3Score
     };
-    console.warn(RAPID3Score);
+
+    const answers = [
+      { text: 'Without any difficulty',   points: 0 },
+      { text: 'With SOME difficulty',     points: 1 },
+      { text: 'With MUCH difficulty',     points: 2 },
+      { text: 'Unable to do so',          points: 3 }
+      ];
+    console.warn('awefawefawfawfw', newFN);
+    const newFNText = newFN.map((item, id) => {
+      return [`Question ${id + 1}: ${RAPID3_FN[id]}`, `[Answer]: ${item} -- ${answers[item].text}`]
+    });
+    const textArray = [].concat.apply([], ['[RAPID3 Assessment Responses]', ...newFNText]);
+    textArray.push('\n');
+    textArray.push('\n');
+    textArray.push(RAPID3_PN[0].text);
+    textArray.push(`[Answer]: ${pn}`);
+    textArray.push('\n');
+    textArray.push('\n');
+    textArray.push(RAPID3_PTGE[0].text);
+    textArray.push(`[Answer]: ${ptge}`);
+    textArray.push('\n');
+    textArray.push('\n');
+    textArray.push(`Final RAPID3 Score: ${result.total[1]} -- ${result.total[0]}`);
+    textArray.push('\n');
+    textArray.push('\n');
+
     this.setState({ results: result });
-    // this.props.onCalculateScore(result);
+    this.saveAsync(result, this.state.images);
+
+    // this.props.navigation.navigate('Screen4');
   }
 
   handleSaveImage(err, base64Img) {
@@ -152,17 +190,8 @@ export default class Screen2 extends Component {
     this.setState({
           images: [...this.state.images, 'data:image/png;base64,'+ base64Img]
         });
-    this.saveAsync(this.state.images);
+    // this.saveAsync('image', this.state.images);
   }
-  saveAsync = async (base64s) => {
-    let data = {
-      images: base64s,
-    };
-
-      await AsyncStorage.setItem('data', JSON.stringify(data));
-
-       this.props.navigation.navigate('Screen4');
-   };
 
   onSave() {
     // Save all images
@@ -170,8 +199,6 @@ export default class Screen2 extends Component {
     JOINT_SKETCHES.forEach(item => {
       this[`sketchCanvas${item.index}`].getBase64('png', false, true, false, false, this.handleSaveImage);
     });
-    // TODO: navigate home upon successful saving -- perhaps use promises?
-    //this.props.navigation.navigate('Home');
   }
 
   onClear(index) {
@@ -196,7 +223,10 @@ export default class Screen2 extends Component {
         type="end"
         results={this.state.results}
         navigation={this.props.navigation}
-        onSaveImage={this.onSave} />
+        onSaveImage={() => {
+          this.onSave();
+          this.calculateScore(this.state.answersFN, this.state.answersPN, this.state.answersPTGE);
+        }} />
     } else if (item.type === 'start') {
       return <InfoCard type="start" />
     }
