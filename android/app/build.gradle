@@ -102,7 +102,11 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
     }
+    dexOptions {
+      jumboMode = true
+      }
     splits {
         abi {
             reset()
@@ -133,8 +137,13 @@ android {
 }
 
 dependencies {
+    
     implementation project(':react-native-text-detector')
     implementation project(':react-native-camera')
+    implementation project(':@terrylinla_react-native-sketch-canvas')
+    implementation project(':react-native-image-base64')
+    implementation project(':react-native-html-to-pdf')
+    implementation project(':react-native-pdf-lib')
     implementation project(':react-native-gesture-handler')
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"

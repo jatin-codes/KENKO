@@ -6,6 +6,10 @@ import android.app.Application;
 import com.facebook.react.ReactApplication;
 import com.fetchsky.RNTextDetector.RNTextDetectorPackage;
 import org.reactnative.camera.RNCameraPackage;
+import com.terrylinla.rnsketchcanvas.SketchCanvasPackage;
+import fr.snapp.imagebase64.RNImgToBase64Package;
+import com.christopherdro.htmltopdf.RNHTMLtoPDFPackage;
+import com.hopding.pdflib.PDFLibPackage;
 import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
@@ -29,6 +33,10 @@ public class MainApplication extends Application implements ReactApplication {
           new MainReactPackage(),
             new RNTextDetectorPackage(),
             new RNCameraPackage(),
+            new SketchCanvasPackage(),
+            new RNImgToBase64Package(),
+            new RNHTMLtoPDFPackage(),
+            new PDFLibPackage(),
             new RNGestureHandlerPackage()
       );
     }
