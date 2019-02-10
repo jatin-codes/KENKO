@@ -31,14 +31,14 @@ LinksStack.navigationOptions = {
   tabBarLabel: ' ',
   tabBarIcon: ({ focused }) => (
     focused ? <Image
-          source={require('./assets/images/camera-white.png')}
-          style={{flex:1}}
-        />
-        :
-        <Image
-          source={require('./assets/images/camera.png')}
-          style={{flex:1}}
-        />
+      source={require('./assets/images/camera-white.png')}
+      style={{flex:1}}
+    />
+    :
+    <Image
+      source={require('./assets/images/camera.png')}
+      style={{flex:1}}
+    />
   ),
 };
 
@@ -49,14 +49,14 @@ SettingsStack.navigationOptions = {
   tabBarLabel: ' ',
   tabBarIcon: ({ focused }) => (
     focused ? <Image
-          source={require('./assets/images/setting-icon-white.png')}
-          style={{flex:1}}
-        />
-        :
-        <Image
-          source={require('./assets/images/setting-icon.png')}
-          style={{flex:1}}
-        />
+      source={require('./assets/images/setting-icon-white.png')}
+      style={{flex:1}}
+    />
+    :
+    <Image
+      source={require('./assets/images/setting-icon.png')}
+      style={{flex:1}}
+    />
   ),
 };
 

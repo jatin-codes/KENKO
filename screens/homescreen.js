@@ -37,6 +37,7 @@ export default class HomeScreen extends Component {
         <ScreenBtn onPress={() => this.props.navigation.navigate('Screen2')} text="Schedule Reminders" />
         <ScreenBtn onPress={() => this.props.navigation.navigate('Screen5')} text="Add Medication" />
         <ScreenBtn onPress={() => this.props.navigation.navigate('Screen3')} text="Scan Ingredients" />
+        <ScreenBtn onPress={() => this.props.navigation.navigate('Screen6')} text="Learn More" />
       </ScrollView>
     );
   }
