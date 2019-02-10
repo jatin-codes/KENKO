@@ -11,6 +11,7 @@ import {
 } from 'react-native';
 import RNHTMLtoPDF from 'react-native-html-to-pdf';
 import FileViewer from 'react-native-file-viewer';
+import CardButton from './components/CardButton';
 
 export default class Screen4 extends Component {
   static navigationOptions = {
@@ -54,6 +55,7 @@ export default class Screen4 extends Component {
           source={{uri: this.state.images[1]}}
         />
         </View>
+        <CardButton text="Back to Home" onPress={this.props.navigation.navigation.navigate('Home')} />
       </View>
     );
   }
