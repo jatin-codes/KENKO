@@ -1,6 +1,13 @@
+export const rapid3Types = {
+  RAPID3_FN: 'RAPID3_FN',
+  RAPID3_PN: 'RAPID3_PN',
+  RAPID3_PTGE: 'RAPID3_PTGE'
+};
+
 export const RAPID3_FN = [
   {
     id: 1,
+    type: rapid3Types.RAPID3_FN,
     text: 'Are you able to dress yourself, including shoelaces and buttons?',
     answers: [
       { text: 'Without any difficulty',   points: 0 },
@@ -11,6 +18,7 @@ export const RAPID3_FN = [
   },
   {
     id: 2,
+    type: rapid3Types.RAPID3_FN,
     text: 'Are you able to get in and out of bed?',
     answers: [
       { text: 'Without any difficulty',   points: 0 },
@@ -21,6 +29,7 @@ export const RAPID3_FN = [
   },
   {
     id: 3,
+    type: rapid3Types.RAPID3_FN,
     text: 'Are you able to lift a full cup of glass to your mouth?',
     answers: [
       { text: 'Without any difficulty',   points: 0 },
@@ -31,6 +40,7 @@ export const RAPID3_FN = [
   },
   {
     id: 4,
+    type: rapid3Types.RAPID3_FN,
     text: 'Are you able to walk outdoors on flat ground?',
     answers: [
       { text: 'Without any difficulty',   points: 0 },
@@ -41,6 +51,7 @@ export const RAPID3_FN = [
   },
   {
     id: 5,
+    type: rapid3Types.RAPID3_FN,
     text: 'Are you able to wash and dry your entire body?',
     answers: [
       { text: 'Without any difficulty',   points: 0 },
@@ -51,6 +62,7 @@ export const RAPID3_FN = [
   },
   {
     id: 6,
+    type: rapid3Types.RAPID3_FN,
     text: 'Are you able to bend down and pick up clothing from the floor?',
     answers: [
       { text: 'Without any difficulty',   points: 0 },
@@ -61,6 +73,7 @@ export const RAPID3_FN = [
   },
   {
     id: 7,
+    type: rapid3Types.RAPID3_FN,
     text: 'Are you able to turn regular faucets on and off?',
     answers: [
       { text: 'Without any difficulty',   points: 0 },
@@ -71,6 +84,7 @@ export const RAPID3_FN = [
   },
   {
     id: 8,
+    type: rapid3Types.RAPID3_FN,
     text: 'Are you able to get in an out of a car, bus, train, or airplane?',
     answers: [
       { text: 'Without any difficulty',   points: 0 },
@@ -81,6 +95,7 @@ export const RAPID3_FN = [
   },
   {
     id: 9,
+    type: rapid3Types.RAPID3_FN,
     text: 'Are you able to walk two miles or three kilometers, if you wish?',
     answers: [
       { text: 'Without any difficulty',   points: 0 },
@@ -91,6 +106,7 @@ export const RAPID3_FN = [
   },
   {
     id: 10,
+    type: rapid3Types.RAPID3_FN,
     text: 'Are you able to participate in recreational activities and sports, as you would like, if you wish?',
     answers: [
       { text: 'Without any difficulty',   points: 0 },
@@ -101,6 +117,7 @@ export const RAPID3_FN = [
   },
   {
     id: 11,
+    type: rapid3Types.RAPID3_FN,
     text: `Are you able to get a good night's sleep?`,
     answers: [
       { text: 'Without any difficulty',   points: 0 },
@@ -111,6 +128,7 @@ export const RAPID3_FN = [
   },
   {
     id: 12,
+    type: rapid3Types.RAPID3_FN,
     text: 'Are you able to deal with feelings of anxiety or being nervous?',
     answers: [
       { text: 'Without any difficulty',   points: 0 },
@@ -121,6 +139,7 @@ export const RAPID3_FN = [
   },
   {
     id: 13,
+    type: rapid3Types.RAPID3_FN,
     text: 'Are you able to deal with feelings of depression or feeling blue?',
     answers: [
       { text: 'Without any difficulty',   points: 0 },
@@ -134,6 +153,7 @@ export const RAPID3_FN = [
 export const RAPID3_PN = [
   {
     id: 14,
+    type: rapid3Types.RAPID3_PN,
     text: 'How much pain have you had because of your condition OVER THE PAST WEEK?',
     subtitle: 'Please indicate below how severe your pain has been:',
     extremes: [
@@ -146,6 +166,7 @@ export const RAPID3_PN = [
 export const RAPID3_PTGE = [
   {
     id: 15,
+    type: rapid3Types.RAPID3_PTGE,
     text: 'Considering all the ways in which illness and health conditions may affect you at this time, please indicate below how you are doing:',
     subtitle: '',
     extremes: [

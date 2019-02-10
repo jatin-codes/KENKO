@@ -8,12 +8,13 @@
   },
   "dependencies": {
     "@terrylinla/react-native-sketch-canvas": "^0.8.0",
+    "lottie-react-native": "^2.5.11",
     "react": "16.6.3",
     "react-native": "0.58.4",
-    "react-native-snap-carousel": "^3.7.5",
     "react-native-html-to-pdf": "^0.6.0",
     "react-native-image-base64": "^0.1.3",
     "react-native-pdf-lib": "^0.2.0",
+    "react-native-snap-carousel": "^3.7.5",
     "react-navigation": "^3.2.1"
   },
   "devDependencies": {

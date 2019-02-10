@@ -8,32 +8,23 @@ import {
   StyleSheet,
   Dimensions,
   TouchableOpacity,
-  Button
 } from 'react-native';
 import Carousel from 'react-native-snap-carousel';
-import {SketchCanvas} from '@terrylinla/react-native-sketch-canvas';
-
-
-const MOCK_ENTRIES = [
-  {
-    title: 'Use your finger to mark the joints that are painful and swollen.',
-    image: {
-      filename: 'hands',
-      directory: '',
-      mode: 'AspectFit'
-    },
-    index: 0
-  },
-  {
-    title: 'Use your finger to mark the joints that are painful and swollen.',
-    image: {
-      filename: 'body2',
-      directory: '',
-      mode: 'AspectFit'
-    },
-    index: 1
-  }
-];
+import {
+  rapid3Types,
+  RAPID3_FN,
+  RAPID3_PN,
+  RAPID3_PTGE,
+  calculateRAPID3Score
+} from './constants/RAPID3';
+import {
+  jointsTypes,
+  JOINT_SKETCHES,
+} from './constants/joints';
+import RAPID3FNCard from './components/RAPID3FN';
+import RAPID3PNCard from './components/RAPID3PN';
+import RAPID3PTGECard from './components/RAPID3PTGE';
+import JointSketchesCard from './components/JointSketchesCards';
 
 // const sliderWidth = Dimensions.get('window').width;
 const margin = 20;
@@ -65,16 +56,32 @@ export default class Screen2 extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentIndex: 0
+      currentIndex: 0,
+      answersFN: new Array(13).fill(0),
+      answersPN: 0,
+      answersPTGE: 0,
     };
     this.onClear = this.onClear.bind(this);
     this.onSave = this.onSave.bind(this);
+    this.handleSelectAnswer = this.handleSelectAnswer.bind(this);
     this.handleSaveImage = this.handleSaveImage.bind(this);
   }
 
   static navigationOptions = {
     header: null ,
   };
+
+  handleSelectAnswer(type, question, answer) {
+    if (type === 'fn') {
+      const newAnswersFN = this.state.answersFN.slice();
+      newAnswersFN[question] = answer;
+      this.setState({ answersFN: newAnswersFN });
+    } else if (type === 'pn') {
+      this.setState({ answersPN: answer });
+    } else if (type === 'ptge') {
+      this.setState({ answersPTGE: answer });
+    }
+  }
 
   handleSaveImage(err, base64Img) {
     if (err !== null) {
@@ -96,7 +103,7 @@ export default class Screen2 extends Component {
   onSave() {
     // Save all images
     // docs: https://github.com/terrylinla/react-native-sketch-canvas
-    MOCK_ENTRIES.forEach(item => {
+    JOINT_SKETCHES.forEach(item => {
       this[`sketchCanvas${item.index}`].getBase64('png', false, true, false, false, this.handleSaveImage);
     });
     // TODO: navigate home upon successful saving -- perhaps use promises?
@@ -108,30 +115,24 @@ export default class Screen2 extends Component {
   }
 
   _renderItem ({item}) {
-    return (
-      <View style={{flex: 1}}>
-        <Text style={styles.title}>{ item.title }</Text>
-        <SketchCanvas
-          ref={(c) => this[`sketchCanvas${item.index}`] = c}
-          style={{ flex: 1 }}
-          strokeColor={'#f15f3764'}
-          strokeWidth={20}
-          localSourceImage={item.image}
-          onSketchSaved={(success, path) => {
-            console.log('onSketchSaved() ', success, " ", path);
-          }}
-        />
-        <Text style={styles.dragBar}>TODO: add icon here to prompt user to drag</Text>
-      </View>
-    );
+    if (item.type === jointsTypes.JOINTS) {
+      return <JointSketchesCard ref1={(c) => this[`sketchCanvas${item.index}`] = c} item={item} />;
+    } else if (item.type === rapid3Types.RAPID3_FN) {
+      return <RAPID3FNCard item={item} onSelect={this.handleSelectAnswer} />
+    } else if (item.type === rapid3Types.RAPID3_PN) {
+      return <RAPID3PNCard item={item} onSelect={this.handleSelectAnswer} />
+    } else if (item.type === rapid3Types.RAPID3_PTGE) {
+      return <RAPID3PTGECard item={item} onSelect={this.handleSelectAnswer} />
+    }
   }
+
 
   render() {
     return (
       <View style={styles.container}>
         <Carousel
           ref={(c) => { this._carousel = c; }}
-          data={MOCK_ENTRIES}
+          data={JOINT_SKETCHES.concat(RAPID3_FN, RAPID3_PN, RAPID3_PTGE)}
           renderItem={this._renderItem.bind(this)}
           containerCustomStyle={carouselStyles.container}
           slideStyle={carouselStyles.slide}
