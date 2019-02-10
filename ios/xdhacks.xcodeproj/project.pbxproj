@@ -40,6 +40,11 @@
 		ED297163215061F000B7C4FE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED297162215061F000B7C4FE /* JavaScriptCore.framework */; };
 		ED2971652150620600B7C4FE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2971642150620600B7C4FE /* JavaScriptCore.framework */; };
 		729A017169F44123AA6D6BA0 /* libRNGestureHandler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BB06317E52194CD68AF471DB /* libRNGestureHandler.a */; };
+		57CDA9DEA92A4F1684F7BC90 /* libRNPDFLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 289C29395EFD490DBC7ED76E /* libRNPDFLib.a */; };
+		0550797054E441E7AC6CB6FB /* Times New Roman.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 819FF1786A2E45698C16F430 /* Times New Roman.ttf */; };
+		3FE29BC1F3684D7190119F0A /* libRNHTMLtoPDF.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B094C80281BF4B9284FA1803 /* libRNHTMLtoPDF.a */; };
+		DE474300F7924962BCA941BB /* RNHTMLtoPDFTests.xctest in Resources */ = {isa = PBXBuildFile; fileRef = 9B39A7873E444205AEC74A47 /* RNHTMLtoPDFTests.xctest */; };
+		8331394DD6824734A79BE00C /* libRNImgToBase64.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B465C8A5D2B4FD4A9FBB228 /* libRNImgToBase64.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -349,6 +354,14 @@
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 		2A5E7664A96D482CAA4C4217 /* RNGestureHandler.xcodeproj */ = {isa = PBXFileReference; name = "RNGestureHandler.xcodeproj"; path = "../node_modules/react-native-gesture-handler/ios/RNGestureHandler.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
 		BB06317E52194CD68AF471DB /* libRNGestureHandler.a */ = {isa = PBXFileReference; name = "libRNGestureHandler.a"; path = "libRNGestureHandler.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		6B1E09A701CF4803A568A79E /* RNPDFLib.xcodeproj */ = {isa = PBXFileReference; name = "RNPDFLib.xcodeproj"; path = "../node_modules/react-native-pdf-lib/ios/RNPDFLib.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		289C29395EFD490DBC7ED76E /* libRNPDFLib.a */ = {isa = PBXFileReference; name = "libRNPDFLib.a"; path = "libRNPDFLib.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		819FF1786A2E45698C16F430 /* Times New Roman.ttf */ = {isa = PBXFileReference; name = "Times New Roman.ttf"; path = "../node_modules/react-native-pdf-lib/assets/Times New Roman.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		6DB2B49993CA46B4B9CAA6E6 /* RNHTMLtoPDF.xcodeproj */ = {isa = PBXFileReference; name = "RNHTMLtoPDF.xcodeproj"; path = "../node_modules/react-native-html-to-pdf/ios/RNHTMLtoPDF.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		B094C80281BF4B9284FA1803 /* libRNHTMLtoPDF.a */ = {isa = PBXFileReference; name = "libRNHTMLtoPDF.a"; path = "libRNHTMLtoPDF.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		9B39A7873E444205AEC74A47 /* RNHTMLtoPDFTests.xctest */ = {isa = PBXFileReference; name = "RNHTMLtoPDFTests.xctest"; path = "RNHTMLtoPDFTests.xctest"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.cfbundle; explicitFileType = undefined; includeInIndex = 0; };
+		A00317544DDD407BAE4BCAB2 /* RNImgToBase64.xcodeproj */ = {isa = PBXFileReference; name = "RNImgToBase64.xcodeproj"; path = "../node_modules/react-native-image-base64/ios/RNImgToBase64.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		7B465C8A5D2B4FD4A9FBB228 /* libRNImgToBase64.a */ = {isa = PBXFileReference; name = "libRNImgToBase64.a"; path = "libRNImgToBase64.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -378,6 +391,10 @@
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
 				729A017169F44123AA6D6BA0 /* libRNGestureHandler.a in Frameworks */,
+				57CDA9DEA92A4F1684F7BC90 /* libRNPDFLib.a in Frameworks */,
+				3FE29BC1F3684D7190119F0A /* libRNHTMLtoPDF.a in Frameworks */,
+				DE474300F7924962BCA941BB /* RNHTMLtoPDFTests.xctest in Resources */,
+				8331394DD6824734A79BE00C /* libRNImgToBase64.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -568,6 +585,9 @@
 				00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */,
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
 				2A5E7664A96D482CAA4C4217 /* RNGestureHandler.xcodeproj */,
+				6B1E09A701CF4803A568A79E /* RNPDFLib.xcodeproj */,
+				6DB2B49993CA46B4B9CAA6E6 /* RNHTMLtoPDF.xcodeproj */,
+				A00317544DDD407BAE4BCAB2 /* RNImgToBase64.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -589,6 +609,7 @@
 				00E356EF1AD99517003FC87E /* xdhacksTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
+				68EBFCB0E21A4047828A9CBC /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -614,6 +635,15 @@
 			);
 			name = Products;
 			sourceTree = "<group>";
+		};
+		68EBFCB0E21A4047828A9CBC /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				819FF1786A2E45698C16F430 /* Times New Roman.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -1061,6 +1091,7 @@
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
+				0550797054E441E7AC6CB6FB /* Times New Roman.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1196,10 +1227,17 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-pdf-lib/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-html-to-pdf/ios/RNHTMLtoPDF/**",
+					"$(SRCROOT)/../node_modules/react-native-image-base64/ios",
 				);
 			};
 			name = Debug;
@@ -1222,10 +1260,17 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-pdf-lib/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-html-to-pdf/ios/RNHTMLtoPDF/**",
+					"$(SRCROOT)/../node_modules/react-native-image-base64/ios",
 				);
 			};
 			name = Release;
@@ -1249,6 +1294,9 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-pdf-lib/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-html-to-pdf/ios/RNHTMLtoPDF/**",
+					"$(SRCROOT)/../node_modules/react-native-image-base64/ios",
 				);
 			};
 			name = Debug;
@@ -1271,6 +1319,9 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-pdf-lib/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-html-to-pdf/ios/RNHTMLtoPDF/**",
+					"$(SRCROOT)/../node_modules/react-native-image-base64/ios",
 				);
 			};
 			name = Release;
@@ -1301,10 +1352,17 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-pdf-lib/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-html-to-pdf/ios/RNHTMLtoPDF/**",
+					"$(SRCROOT)/../node_modules/react-native-image-base64/ios",
 				);
 			};
 			name = Debug;
@@ -1335,10 +1393,17 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-pdf-lib/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-html-to-pdf/ios/RNHTMLtoPDF/**",
+					"$(SRCROOT)/../node_modules/react-native-image-base64/ios",
 				);
 			};
 			name = Release;
@@ -1368,10 +1433,17 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-pdf-lib/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-html-to-pdf/ios/RNHTMLtoPDF/**",
+					"$(SRCROOT)/../node_modules/react-native-image-base64/ios",
 				);
 			};
 			name = Debug;
@@ -1401,10 +1473,17 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-pdf-lib/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-html-to-pdf/ios/RNHTMLtoPDF/**",
+					"$(SRCROOT)/../node_modules/react-native-image-base64/ios",
 				);
 			};
 			name = Release;
