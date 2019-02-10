@@ -14,10 +14,9 @@ import Screen2 from "./screens/screen2.js";
 import Screen3 from "./screens/screen3.js";
 import Screen4 from "./screens/screen4.js";
 import AppNav from "./screens/nav.js";
-type Props = {};
 
 
-export default class App extends Component<Props> {
+export default class App extends Component {
   render() {
     return (
       <AppNav />
