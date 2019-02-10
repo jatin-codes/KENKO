@@ -10,14 +10,21 @@ import {
   TouchableOpacity
 } from 'react-native';
 import UserInfo from './UserInfo';
+import Header from './Header';
 
 export default class HomeScreen extends Component {
+
+  static navigationOptions = {
+    header: null,
+  };
+
   constructor() {
     super();
   }
   render() {
     return (
       <ScrollView style={styles.contentContainer}>
+        <Header/>
         <View style={styles.welcome}>
             <Text style={styles.welcome}>Welcome back, John!</Text>
         </View>
@@ -45,6 +52,7 @@ const styles = StyleSheet.create({
   
   contentContainer: {
     paddingVertical: 20,
+    backgroundColor: "#769EF5",
   }
   ,
   container: {
@@ -57,11 +65,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     textAlign: 'left',
     margin: 5,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
+    backgroundColor: '#f3f3f3',
   },
   buttonStyle: {
     alignSelf: 'stretch',
