@@ -12,6 +12,7 @@ const END_TITLE = `Congratulations, You're Done!`;
 const START_TEXT = 'We will be asking you a few questions to help you track your progress';
 const END_TEXT = (result) => `Your are currently in ${result} You can download a report of your results for your records.`;
 
+
 const InfoCard = ({ type, results, navigation, onSaveImage }) => {
   if (type === 'end') {
     return (
