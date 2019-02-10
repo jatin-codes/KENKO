@@ -5,7 +5,7 @@ export default class UserInfo extends Component{
     render (){
         return (
             <View style={styles.container}>
-                <Text>Heading 1</Text>
+                <Text>Lottie Design</Text>
 
                 <Text>This is the container for lottie animation</Text>
             </View>
