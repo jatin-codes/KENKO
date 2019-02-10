@@ -4,6 +4,15 @@ import android.app.Application;
 
 import com.facebook.react.ReactApplication;
 import com.RNFetchBlob.RNFetchBlobPackage;
+import com.keyee.pdfview.PDFView;
+import com.hopding.pdflib.PDFLibPackage;
+import org.wonday.pdf.RCTPdfView;
+import fr.snapp.imagebase64.RNImgToBase64Package;
+import com.christopherdro.htmltopdf.RNHTMLtoPDFPackage;
+import com.terrylinla.rnsketchcanvas.SketchCanvasPackage;
+import org.wonday.pdf.RCTPdfView;
+import com.keyee.pdfview.PDFView;
+import com.RNFetchBlob.RNFetchBlobPackage;
 import com.terrylinla.rnsketchcanvas.SketchCanvasPackage;
 import fr.snapp.imagebase64.RNImgToBase64Package;
 import com.christopherdro.htmltopdf.RNHTMLtoPDFPackage;
@@ -29,6 +38,8 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new RCTPdfView(),
+            new PDFView(),
             new RNFetchBlobPackage(),
             new SketchCanvasPackage(),
             new RNImgToBase64Package(),

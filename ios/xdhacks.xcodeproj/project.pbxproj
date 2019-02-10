@@ -48,6 +48,8 @@
 		BC9F9442A74D44668FF8BA04 /* libRNSketchCanvas.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 262719F1B52745ED9EFDAF4E /* libRNSketchCanvas.a */; };
 		847AE10AAC504BC7BFCFD20A /* libReactNativeViewPDF.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF6370DA17EC485984BA29DC /* libReactNativeViewPDF.a */; };
 		93E17D474C4E4BE2A4E8A96D /* libRNFetchBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 28C8DB2A387C436B9089956B /* libRNFetchBlob.a */; };
+		C2E5B2B6F94648DDBDD61FA9 /* libRNPDFView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B8488C89D0C46CBB4386960 /* libRNPDFView.a */; };
+		49EAC780C0F641889657EEBB /* libRCTPdf.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 51305E0DD6E149FCB6B73D53 /* libRCTPdf.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -371,6 +373,10 @@
 		BF6370DA17EC485984BA29DC /* libReactNativeViewPDF.a */ = {isa = PBXFileReference; name = "libReactNativeViewPDF.a"; path = "libReactNativeViewPDF.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 		8AE9EEFB635F40B5B9427488 /* RNFetchBlob.xcodeproj */ = {isa = PBXFileReference; name = "RNFetchBlob.xcodeproj"; path = "../node_modules/rn-fetch-blob/ios/RNFetchBlob.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
 		28C8DB2A387C436B9089956B /* libRNFetchBlob.a */ = {isa = PBXFileReference; name = "libRNFetchBlob.a"; path = "libRNFetchBlob.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		9604198D0A4E46B3B785F7BF /* RNPDFView.xcodeproj */ = {isa = PBXFileReference; name = "RNPDFView.xcodeproj"; path = "../node_modules/react-native-pdf-view/RNPDFView.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		6B8488C89D0C46CBB4386960 /* libRNPDFView.a */ = {isa = PBXFileReference; name = "libRNPDFView.a"; path = "libRNPDFView.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		32D125D1851948189879B2F8 /* RCTPdf.xcodeproj */ = {isa = PBXFileReference; name = "RCTPdf.xcodeproj"; path = "../node_modules/react-native-pdf/ios/RCTPdf.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		51305E0DD6E149FCB6B73D53 /* libRCTPdf.a */ = {isa = PBXFileReference; name = "libRCTPdf.a"; path = "libRCTPdf.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -407,6 +413,8 @@
 				BC9F9442A74D44668FF8BA04 /* libRNSketchCanvas.a in Frameworks */,
 				847AE10AAC504BC7BFCFD20A /* libReactNativeViewPDF.a in Frameworks */,
 				93E17D474C4E4BE2A4E8A96D /* libRNFetchBlob.a in Frameworks */,
+				C2E5B2B6F94648DDBDD61FA9 /* libRNPDFView.a in Frameworks */,
+				49EAC780C0F641889657EEBB /* libRCTPdf.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -603,6 +611,8 @@
 				0803120C31D04F0C97E7834F /* RNSketchCanvas.xcodeproj */,
 				F788207378C046619FE8B7E1 /* ReactNativeViewPDF.xcodeproj */,
 				8AE9EEFB635F40B5B9427488 /* RNFetchBlob.xcodeproj */,
+				9604198D0A4E46B3B785F7BF /* RNPDFView.xcodeproj */,
+				32D125D1851948189879B2F8 /* RCTPdf.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -1249,6 +1259,8 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1259,6 +1271,8 @@
 					"$(SRCROOT)/../node_modules/@terrylinla/react-native-sketch-canvas/ios/RNSketchCanvas/**",
 					"$(SRCROOT)/../node_modules/react-native-view-pdf/ReactNativeViewPDF",
 					"$(SRCROOT)/../node_modules/rn-fetch-blob/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-pdf-view/RNPDFView",
+					"$(SRCROOT)/../node_modules/react-native-pdf/ios/RCTPdf/**",
 				);
 			};
 			name = Debug;
@@ -1288,6 +1302,8 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1298,6 +1314,8 @@
 					"$(SRCROOT)/../node_modules/@terrylinla/react-native-sketch-canvas/ios/RNSketchCanvas/**",
 					"$(SRCROOT)/../node_modules/react-native-view-pdf/ReactNativeViewPDF",
 					"$(SRCROOT)/../node_modules/rn-fetch-blob/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-pdf-view/RNPDFView",
+					"$(SRCROOT)/../node_modules/react-native-pdf/ios/RCTPdf/**",
 				);
 			};
 			name = Release;
@@ -1327,6 +1345,8 @@
 					"$(SRCROOT)/../node_modules/@terrylinla/react-native-sketch-canvas/ios/RNSketchCanvas/**",
 					"$(SRCROOT)/../node_modules/react-native-view-pdf/ReactNativeViewPDF",
 					"$(SRCROOT)/../node_modules/rn-fetch-blob/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-pdf-view/RNPDFView",
+					"$(SRCROOT)/../node_modules/react-native-pdf/ios/RCTPdf/**",
 				);
 			};
 			name = Debug;
@@ -1355,6 +1375,8 @@
 					"$(SRCROOT)/../node_modules/@terrylinla/react-native-sketch-canvas/ios/RNSketchCanvas/**",
 					"$(SRCROOT)/../node_modules/react-native-view-pdf/ReactNativeViewPDF",
 					"$(SRCROOT)/../node_modules/rn-fetch-blob/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-pdf-view/RNPDFView",
+					"$(SRCROOT)/../node_modules/react-native-pdf/ios/RCTPdf/**",
 				);
 			};
 			name = Release;
@@ -1392,6 +1414,8 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1402,6 +1426,8 @@
 					"$(SRCROOT)/../node_modules/@terrylinla/react-native-sketch-canvas/ios/RNSketchCanvas/**",
 					"$(SRCROOT)/../node_modules/react-native-view-pdf/ReactNativeViewPDF",
 					"$(SRCROOT)/../node_modules/rn-fetch-blob/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-pdf-view/RNPDFView",
+					"$(SRCROOT)/../node_modules/react-native-pdf/ios/RCTPdf/**",
 				);
 			};
 			name = Debug;
@@ -1439,6 +1465,8 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1449,6 +1477,8 @@
 					"$(SRCROOT)/../node_modules/@terrylinla/react-native-sketch-canvas/ios/RNSketchCanvas/**",
 					"$(SRCROOT)/../node_modules/react-native-view-pdf/ReactNativeViewPDF",
 					"$(SRCROOT)/../node_modules/rn-fetch-blob/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-pdf-view/RNPDFView",
+					"$(SRCROOT)/../node_modules/react-native-pdf/ios/RCTPdf/**",
 				);
 			};
 			name = Release;
@@ -1485,6 +1515,8 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1495,6 +1527,8 @@
 					"$(SRCROOT)/../node_modules/@terrylinla/react-native-sketch-canvas/ios/RNSketchCanvas/**",
 					"$(SRCROOT)/../node_modules/react-native-view-pdf/ReactNativeViewPDF",
 					"$(SRCROOT)/../node_modules/rn-fetch-blob/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-pdf-view/RNPDFView",
+					"$(SRCROOT)/../node_modules/react-native-pdf/ios/RCTPdf/**",
 				);
 			};
 			name = Debug;
@@ -1531,6 +1565,8 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1541,6 +1577,8 @@
 					"$(SRCROOT)/../node_modules/@terrylinla/react-native-sketch-canvas/ios/RNSketchCanvas/**",
 					"$(SRCROOT)/../node_modules/react-native-view-pdf/ReactNativeViewPDF",
 					"$(SRCROOT)/../node_modules/rn-fetch-blob/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-pdf-view/RNPDFView",
+					"$(SRCROOT)/../node_modules/react-native-pdf/ios/RCTPdf/**",
 				);
 			};
 			name = Release;
