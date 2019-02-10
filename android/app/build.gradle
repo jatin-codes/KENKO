@@ -154,7 +154,6 @@ task copyDownloadableDepsToLibs(type: Copy) {
     into 'libs'
 }
 //
-//apply plugin: 'com.google.gms.google-services'
-//
+apply plugin: 'com.google.gms.google-services'
 //// Work around for onesignal-gradle-plugin compatibility
-//com.google.gms.googleservices.GoogleServicesPlugin.config.disableVersionCheck = true
+com.google.gms.googleservices.GoogleServicesPlugin.config.disableVersionCheck = true

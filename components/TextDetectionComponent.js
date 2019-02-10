@@ -17,4 +17,10 @@ export class TextDetectionComponent extends PureComponent {
       console.warn(e);
     }
   };
+
+  render() {
+    return (
+      
+    )
+  }
 }
