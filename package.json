@@ -9,6 +9,8 @@
   "dependencies": {
     "react": "16.6.3",
     "react-native": "0.58.4",
+    "react-native-camera": "^1.10.1",
+    "react-native-text-detector": "0.0.6",
     "react-navigation": "^3.2.1"
   },
   "devDependencies": {
