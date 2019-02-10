@@ -10,13 +10,13 @@ import {
 } from 'react-native';
 
 export default class HomeScreen extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
   }
   render() {
     return (
       <SafeAreaView style={styles.container}>
-        <TouchableOpacity onPress={() => this.props.navigation.navigate('Screen1')} style={styles.buttonStyle}>
+        <TouchableOpacity onPress={() => this.props.navigation.navigate('Splash')} style={styles.buttonStyle}>
           <Text> Screen 1 </Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => this.props.navigation.navigate('Screen2')} style={styles.buttonStyle}>
