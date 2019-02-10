@@ -11,7 +11,7 @@ export default class screen2 extends Component {
   state = {
     text: {
       recipient: '+16047158724',
-      textmessage: 'SUCCESSSSSSS'
+      textmessage: 'John’s Infliximab injection is due in 30 minutes.'
     }
   }
 

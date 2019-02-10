@@ -32,28 +32,6 @@ export default class HomeScreen extends Component {
     return (
       <ScrollView style={styles.contentContainer}>
         <Header/>
-        <View style={styles.welcome}>
-          <Text style={styles.welcome}>Welcome back, John!</Text>
-        </View>
-        <UserInfo/>
-        <TouchableOpacity onPress={() => this.props.navigation.navigate('Screen1')} style={styles.buttonStyle}>
-          <Text> Screen 1 </Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => this.props.navigation.navigate('Screen2')} style={styles.buttonStyle}>
-          <Text> Screen 2 </Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => this.props.navigation.navigate('Screen3')} style={styles.buttonStyle}>
-          <Text> Screen 3 </Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => this.props.navigation.navigate('Screen5')} style={styles.buttonStyle}>
-          <Text> Screen 5 </Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => this.props.navigation.navigate('Screen6')} style={styles.buttonStyle}>
-          <Text> Screen 6 </Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => this.props.navigation.navigate('Screen4')} style={styles.buttonStyle}>
-          <Text> Screen 4 </Text>
-        </TouchableOpacity>
         <UserInfo navigation={this.props.navigation} />
         <ScreenBtn onPress={() => this.props.navigation.navigate('Screen1')} text="Self Assessment" />
         <ScreenBtn onPress={() => this.props.navigation.navigate('Screen2')} text="Schedule Reminders" />
