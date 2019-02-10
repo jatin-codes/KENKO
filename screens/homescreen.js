@@ -5,9 +5,11 @@ import {
   View,
   Text,
   StyleSheet,
+  ScrollView,
   SafeAreaView,
   TouchableOpacity
 } from 'react-native';
+import UserInfo from './UserInfo';
 
 export default class HomeScreen extends Component {
   constructor() {
@@ -15,7 +17,11 @@ export default class HomeScreen extends Component {
   }
   render() {
     return (
-      <SafeAreaView style={styles.container}>
+      <ScrollView style={styles.contentContainer}>
+        <View style={styles.welcome}>
+            <Text style={styles.welcome}>Welcome back, John!</Text>
+        </View>
+        <UserInfo/>
         <TouchableOpacity onPress={() => this.props.navigation.navigate('Screen1')} style={styles.buttonStyle}>
           <Text> Screen 1 </Text>
         </TouchableOpacity>
@@ -28,15 +34,19 @@ export default class HomeScreen extends Component {
         <TouchableOpacity onPress={() => this.props.navigation.navigate('Screen5')} style={styles.buttonStyle}>
           <Text> Screen 5 </Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => this.props.navigation.navigate('Screen4')} style={styles.buttonStyle}>
-          <Text> Screen 4 </Text>
-        </TouchableOpacity>
-      </SafeAreaView>
+
+      </ScrollView>
     );
   }
 }
 
 const styles = StyleSheet.create({
+
+  
+  contentContainer: {
+    paddingVertical: 20,
+  }
+  ,
   container: {
     flex: 1,
     justifyContent: 'space-between',
@@ -45,8 +55,8 @@ const styles = StyleSheet.create({
   },
   welcome: {
     fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
+    textAlign: 'left',
+    margin: 5,
   },
   instructions: {
     textAlign: 'center',
@@ -55,12 +65,12 @@ const styles = StyleSheet.create({
   },
   buttonStyle: {
     alignSelf: 'stretch',
-    backgroundColor: '#365C80',
+    backgroundColor: '#f3f3f3',
     borderRadius:5,
     borderWidth:1,
-    marginLeft:'5%',
-    marginRight:'5%',
+    margin:'5%',
+    padding: '2%',
     justifyContent: 'center',
-    height: 40
+    height: 60
   }
 });
