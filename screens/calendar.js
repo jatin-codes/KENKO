@@ -16,12 +16,7 @@ export default class Cal extends Component {
     this.onPress = this.onPress.bind(this);
   }
   onPress(day) {
-    this.setState({
-      selected: day.dateString
-    });
-    if (day) {
-      this.props.navigation.navigate("Slot", { bookingDate: day });
-    }
+    this.props.navigation.navigate("Slot");
   }
   _onPressBack() {
     const { goBack } = this.props.navigation;
@@ -39,7 +34,7 @@ export default class Cal extends Component {
           <Text />
         </View>
         <Calendar
-          onDayPress={this.onPress}
+          onDayPress={() => this.onPress()}
           style={styles.calendar}
           hideExtraDays
           markedDates={{ [this.state.selected]: { selected: true } }}

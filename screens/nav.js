@@ -16,17 +16,21 @@ import Screen4 from "./screen4.js";
 import Screen5 from "./screen5";
 import Cal from "./calendar.js";
 import Slot from "./slot.js";
+import DateTimePickerTester from "./dateTimePickerTester.js";
 
 import { createStackNavigator, createAppContainer } from "react-navigation";
+import DateTimePicker from "react-native-modal-datetime-picker";
 
 const MainNavigator = createStackNavigator({
   Home: { screen: HomeScreen },
   Screen1: { screen: Screen1 },
-  Cal: { screen: Cal },
+  Screen2: { screen: Screen2 },
   Screen3: { screen: Screen3 },
   Screen4: { screen: Screen4 },
   Screen5: { screen: Screen5 },
-  Slot: { screen: Slot }
+  Cal: { screen: Cal },
+  Slot: { screen: Slot },
+  DateTimePickerTester: { screen: DateTimePickerTester }
 });
 
 const AppNav = createAppContainer(MainNavigator);

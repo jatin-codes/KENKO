@@ -22,9 +22,11 @@ const jsonData = {
 };
 export default class Slot extends Component {
   render() {
-    <View>
-      <Text> hello</Text>
-    </View>;
+    return (
+      <View>
+        <Text> hello</Text>
+      </View>
+    );
   }
 }
 // export default class Slot extends Component {
