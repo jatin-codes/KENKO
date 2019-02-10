@@ -141,7 +141,6 @@ export default class Screen1 extends Component {
       { text: 'With MUCH difficulty',     points: 2 },
       { text: 'Unable to do so',          points: 3 }
       ];
-    console.warn('awefawefawfawfw', newFN);
     const newFNText = newFN.map((item, id) => {
       console.log(item, answers[item]);
       return [`Question ${id + 1}: ${RAPID3_FN[id].text}`, `[Answer]: ${item} -- ${answers[item].text}`]
