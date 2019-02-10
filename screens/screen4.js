@@ -41,7 +41,7 @@ export default class Screen4 extends Component {
     return (
       <View style={styles.container}>
         <TouchableOpacity onPress= {() => this.createPDF()} style={styles.buttonStyle}>
-          <Text style= {{color: "#fff"}}> Create PDF From Images </Text>
+          <Text style= {{color: "#fff", fontWeight: 'bold', fontSize: 28}}> Create PDF From Images </Text>
         </TouchableOpacity>
 
         <CardButton text="Back to Home" onPress={()=> this.props.navigation.navigate('Home')} />
@@ -107,17 +107,27 @@ export default class Screen4 extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    justifyContent: 'space-between',
+    paddingTop: 200,
+    paddingBottom: 100
   },
   buttonStyle: {
     alignSelf: 'stretch',
+    alignItems:'center',
     backgroundColor: '#365C80',
     borderRadius:5,
     borderWidth:1,
-    marginLeft:'5%',
-    marginRight:'5%',
-    marginBottom: '20%',
-    marginTop: '20%',
+    marginLeft:15,
+    marginRight:15,
+    // marginBottom: '20%',
+    // marginTop: '20%',
+
+    padding: 5,
     justifyContent: 'center',
-    height: 60
+    height: 75,
+
+  },
+  text: {
+
   }
 });
