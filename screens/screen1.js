@@ -98,7 +98,9 @@ export default class Screen2 extends Component {
     // docs: https://github.com/terrylinla/react-native-sketch-canvas
     MOCK_ENTRIES.forEach(item => {
       this[`sketchCanvas${item.index}`].getBase64('png', false, true, false, false, this.handleSaveImage);
-    })
+    });
+    // TODO: navigate home upon successful saving -- perhaps use promises?
+    this.props.navigation.navigate('Home');
   }
 
   onClear(index) {
