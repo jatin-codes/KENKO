@@ -28,7 +28,7 @@ export default class HomeScreen extends Component {
         <View style={styles.welcome}>
           <Text style={styles.welcome}>Welcome back, John!</Text>
         </View>
-        <UserInfo/>
+        <UserInfo navigation={this.props.navigation} />
         <TouchableOpacity onPress={() => this.props.navigation.navigate('Screen1')} style={styles.buttonStyle}>
           <Text> Screen 1 </Text>
         </TouchableOpacity>
@@ -41,7 +41,6 @@ export default class HomeScreen extends Component {
         <TouchableOpacity onPress={() => this.props.navigation.navigate('Screen5')} style={styles.buttonStyle}>
           <Text> Screen 5 </Text>
         </TouchableOpacity>
-
       </ScrollView>
     );
   }
