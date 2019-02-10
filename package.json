@@ -9,6 +9,7 @@
   "dependencies": {
     "react": "16.6.3",
     "react-native": "0.58.4",
+    "react-native-snap-carousel": "^3.7.5",
     "react-navigation": "^3.2.1"
   },
   "devDependencies": {

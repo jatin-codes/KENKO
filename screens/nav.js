@@ -7,8 +7,7 @@
  * @lint-ignore-every XPLATJSCOPYRIGHT1
  */
 
-import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, TouchableOpacity, SafeAreaView} from 'react-native';
+import React from 'react';
 import HomeScreen from "./homescreen.js";
 import Screen1 from "./screen1.js";
 import Screen2 from "./screen2.js";
