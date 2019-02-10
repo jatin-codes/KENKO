@@ -4,6 +4,7 @@ import com.fetchsky.RNTextDetector.RNTextDetectorPackage;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.vinzscam.reactnativefileviewer.RNFileViewerPackage;
 import com.airbnb.android.react.lottie.LottiePackage;
 import com.fetchsky.RNTextDetector.RNTextDetectorPackage;
 import org.reactnative.camera.RNCameraPackage;
@@ -32,6 +33,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new RNFileViewerPackage(),
             new LottiePackage(),
             new RNTextDetectorPackage(),
             new RNCameraPackage(),
