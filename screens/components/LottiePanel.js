@@ -3,10 +3,15 @@ import {
   View,
   StyleSheet
 } from 'react-native';
+import LottieView from 'lottie-react-native';
 
 const LottiePanel = ({ url, onPress }) => (
   <View style={styles.container}>
-
+    <LottieView
+      source={require('../assets/xd-done.json')}
+      autoPlay
+      loop
+    />
   </View>
 );
 

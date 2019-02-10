@@ -12,7 +12,7 @@ import LottiePanel from './LottiePanel';
 
 const RAPID3FNCard = ({ id, item, onSelect }) => (
   <View style={styles.container}>
-    <LottiePanel />
+    <LottiePanel url="../assets/xd-done.json" />
     <Text style={styles.title}>{item.text}</Text>
     {item.answers.map((option, id) => (
       <CardButton key={id} text={option.text} onSelect={() => onSelect('fn', id, option.points)}/>

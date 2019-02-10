@@ -97,6 +97,11 @@ android {
     compileSdkVersion rootProject.ext.compileSdkVersion
     buildToolsVersion rootProject.ext.buildToolsVersion
 
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+    }
+
     defaultConfig {
         applicationId "com.xdhacks"
         minSdkVersion rootProject.ext.minSdkVersion
@@ -137,6 +142,7 @@ android {
 }
 
 dependencies {
+    implementation project(':lottie-react-native')
     implementation project(':@terrylinla_react-native-sketch-canvas')
     implementation project(':react-native-image-base64')
     implementation project(':react-native-html-to-pdf')
