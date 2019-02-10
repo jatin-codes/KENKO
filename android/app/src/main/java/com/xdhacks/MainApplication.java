@@ -1,9 +1,12 @@
 package com.xdhacks;
 
+import com.fetchsky.RNTextDetector.RNTextDetectorPackage;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
 import com.airbnb.android.react.lottie.LottiePackage;
+import com.fetchsky.RNTextDetector.RNTextDetectorPackage;
+import org.reactnative.camera.RNCameraPackage;
 import com.terrylinla.rnsketchcanvas.SketchCanvasPackage;
 import fr.snapp.imagebase64.RNImgToBase64Package;
 import com.christopherdro.htmltopdf.RNHTMLtoPDFPackage;
@@ -30,6 +33,8 @@ public class MainApplication extends Application implements ReactApplication {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
             new LottiePackage(),
+            new RNTextDetectorPackage(),
+            new RNCameraPackage(),
             new SketchCanvasPackage(),
             new RNImgToBase64Package(),
             new RNHTMLtoPDFPackage(),
