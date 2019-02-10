@@ -4,6 +4,7 @@ import {
   StyleSheet
 } from 'react-native';
 import LottieView from 'lottie-react-native';
+import LinearGradient from 'react-native-linear-gradient';
 
 /**
  * To get lottie 2.5.10 to work, I had to make this modification to app:gradle file
@@ -16,14 +17,14 @@ import LottieView from 'lottie-react-native';
  *
  * **/
 
-const LottiePanel = ({ url, onPress }) => (
-  <View style={styles.container}>
+const LottiePanel = ({ backgroundStyle, source, onPress, loop }) => (
+  <LinearGradient colors={['#4c669f', '#3b5998', '#192f6a']}  style={{...styles.container, ...backgroundStyle}}>
     <LottieView
-      source={require('../assets/xd-done.json')}
+      source={source}
       autoPlay
-      loop
+      loop={loop}
     />
-  </View>
+  </LinearGradient>
 );
 
 const styles = StyleSheet.create({
