@@ -41,18 +41,13 @@ export default class HomeScreen extends Component {
         <TouchableOpacity onPress={() => this.props.navigation.navigate('Screen5')} style={styles.buttonStyle}>
           <Text> Screen 5 </Text>
         </TouchableOpacity>
-<<<<<<< HEAD
         <TouchableOpacity onPress={() => this.props.navigation.navigate('Screen6')} style={styles.buttonStyle}>
           <Text> Screen 6 </Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => this.props.navigation.navigate('Screen4')} style={styles.buttonStyle}>
           <Text> Screen 4 </Text>
         </TouchableOpacity>
-      </SafeAreaView>
-=======
-
       </ScrollView>
->>>>>>> master2
     );
   }
 }

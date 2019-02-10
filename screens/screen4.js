@@ -19,6 +19,7 @@ export default class Screen4 extends Component {
     super(props);
     this.state = {
         images:[],
+        text:[]
       };
     console.log("Entered SCREEN 4")
     this._loadimage();
@@ -27,9 +28,10 @@ export default class Screen4 extends Component {
     _loadimage = async () => {
       const data = JSON.parse (await AsyncStorage.getItem('data'));
       if (data){
-        // console.log("RECEIVED DATA- "+ data.uri)
+        console.log("RECEIVED DATA- "+ data.text)
         this.setState ({
-          images : data.images
+          images : data.images,
+          text: data.text
           });
       }
       console.log("IMAGE = " + this.state.images[1])
@@ -41,19 +43,8 @@ export default class Screen4 extends Component {
         <TouchableOpacity onPress= {() => this.createPDF()} style={styles.buttonStyle}>
           <Text style= {{color: "#fff"}}> Create PDF From Images </Text>
         </TouchableOpacity>
-        <View style={{width: '80%', height: '30%'}}>
-        <Image
-          style={{marginLeft:'5%', width: "100%", height: "100%"}}
-          source={{uri: this.state.images[0]}}
-        />
-        </View>
-        <View style={{width: '80%', height: '80%'}}>
-        <Image
-          style={{width: "100%", height: "100%"}}
-          source={{uri: this.state.images[1]}}
-        />
-        </View>
-        <CardButton text="Back to Home" onPress={this.props.navigation.navigation.navigate('Home')} />
+
+        <CardButton text="Back to Home" onPress={()=> this.props.navigation.navigate('Home')} />
       </View>
     );
   }
@@ -61,9 +52,16 @@ export default class Screen4 extends Component {
     //const image= "file:///Users/User/Desktop/Xdhacks/xdhacks/screens/assets/images/xdhacks.png"
     let html=''
     html= '<div> <h1>TEST PDF</h1> '
+    html= html+ '<ul>'
+    for(let i = 0; i < this.state.text.length ; i++ ){
+      console.log("Text - "+ this.state.text[i])
+      html= html + '<li>'+ this.state.text[i] + '</li>'
+    }
+    html= html+ '</ul>'
+    console.log("HTML after list - " + html)
     for(let i = 0; i < this.state.images.length ; i++ ){
       let base64String= this.state.images[i].replace(/\r?\n|\r/g, "").trim()
-      html= html + "<h2>Image"+ (i+1) +"</h2><img style='width: 300px;height: 365px' src=" + base64String +" /> "
+      html= html + "<h2>Image"+ (i+1) +"</h2><img style='width: 350px;height: 365px' src=" + base64String +" /> "
   }
     //console.log("RECEIVED DATA- "+ base64String)
   html= html +'</ div>'
@@ -117,7 +115,9 @@ const styles = StyleSheet.create({
     borderWidth:1,
     marginLeft:'5%',
     marginRight:'5%',
+    marginBottom: '20%',
+    marginTop: '20%',
     justifyContent: 'center',
-    height: 40
+    height: 60
   }
 });

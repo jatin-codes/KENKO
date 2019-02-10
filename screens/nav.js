@@ -26,14 +26,9 @@ const MainNavigator = createStackNavigator({
   Screen2: {screen: Screen2},
   Screen3: {screen: Screen3},
   Screen4: {screen: Screen4},
-<<<<<<< HEAD
   Screen5: {screen: Screen5},
   Screen6: {screen: Screen6},
-});
-=======
-  Screen5: {screen: Screen5}
 }, {initialRouteName: 'Splash'});
->>>>>>> master2
 
 const AppNav = createAppContainer(MainNavigator);
 

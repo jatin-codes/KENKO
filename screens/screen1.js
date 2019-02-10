@@ -26,20 +26,14 @@ import RAPID3FNCard from './components/RAPID3FN';
 import RAPID3PNCard from './components/RAPID3PN';
 import RAPID3PTGECard from './components/RAPID3PTGE';
 import JointSketchesCard from './components/JointSketchesCards';
-<<<<<<< HEAD
-=======
 import LinearGradient from 'react-native-linear-gradient';
 
->>>>>>> master2
 // const sliderWidth = Dimensions.get('window').width;
 const margin = 20;
 const marginBottom = 0;
 const width = Dimensions.get('window').width;
 const itemWidth = width - (margin * 2);
 const sliderWidth = width;
-<<<<<<< HEAD
-const ActionBar = ({ onSave, onClear }) => (
-=======
 
 const START = [
   { type: 'start' }
@@ -72,10 +66,7 @@ const PageCounter = ({ currentPage, maxPages }) => (
     <Text style={pageCounterStyles.text}>{currentPage}/{maxPages}</Text>
   </View>
 );
-
-
 const ActionBar = ({ showButtons, onClear, }) => (
->>>>>>> master2
   <View style={actionBarStyles.container}>
     {showButtons && <TouchableOpacity
       title="Clear"
@@ -85,7 +76,7 @@ const ActionBar = ({ showButtons, onClear, }) => (
     </TouchableOpacity>}
   </View>
 );
-export default class Screen2 extends Component {
+export default class Screen1 extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -107,16 +98,12 @@ export default class Screen2 extends Component {
   static navigationOptions = {
     header: null,
   };
-<<<<<<< HEAD
-  handleSelectAnswer(type, question, answer) {
-=======
 
   handleSnapToItem(id) {
     this.setState({currentIndex: id});
   }
 
   handleSelectAnswer(type, question, answer, answers) {
->>>>>>> master2
     if (type === 'fn') {
       const newAnswersFN = answers.slice();
       newAnswersFN[question] = answer;
@@ -127,15 +114,13 @@ export default class Screen2 extends Component {
       this.setState({ answersPTGE: answer });
     }
   }
-<<<<<<< HEAD
-=======
 
   saveAsync = async (text, images) => {
+    console.log("View text - "+ text[0])
     let data = {
       text: text,
       images: images,
     };
-    console.warn('text');
     await AsyncStorage.setItem('data', JSON.stringify(data));
     this.props.navigation.navigate('Screen4');
   };
@@ -158,7 +143,8 @@ export default class Screen2 extends Component {
       ];
     console.warn('awefawefawfawfw', newFN);
     const newFNText = newFN.map((item, id) => {
-      return [`Question ${id + 1}: ${RAPID3_FN[id]}`, `[Answer]: ${item} -- ${answers[item].text}`]
+      console.log(item, answers[item]);
+      return [`Question ${id + 1}: ${RAPID3_FN[id].text}`, `[Answer]: ${item} -- ${answers[item].text}`]
     });
     const textArray = [].concat.apply([], ['[RAPID3 Assessment Responses]', ...newFNText]);
     textArray.push('\n');
@@ -176,12 +162,13 @@ export default class Screen2 extends Component {
     textArray.push('\n');
 
     this.setState({ results: result });
-    this.saveAsync(result, this.state.images);
+    console.log("Images Length - "+ this.state.images.length)
+    if(this.state.images.length >= 2)
+      this.saveAsync(textArray, this.state.images);
 
     // this.props.navigation.navigate('Screen4');
   }
 
->>>>>>> master2
   handleSaveImage(err, base64Img) {
     if (err !== null) {
       Alert.alert(
@@ -195,31 +182,18 @@ export default class Screen2 extends Component {
       return;
     }
     // TODO: save base64 to localstorage
-<<<<<<< HEAD
-    console.log("SUCCESS ", base64Img.slice(100));
+    // console.log("SUCCESS ", base64Img.slice(100));
+
     if(this.state.images.length < 2)
       this.setState({
-            images: [...this.state.images, 'data:image/png;base64,'+ base64Img]
-          });
-    if(this.state.images.length >= 2)
-        this.saveAsync(this.state.images);
-  }
-  saveAsync = async (base64s) => {
-    let data = {
-      images: base64s,
-    }
-      await AsyncStorage.setItem('data', JSON.stringify(data));
-       this.props.navigation.navigate('Screen4');
-   };
-=======
-    //console.warn("SUCCESS ", base64Img.slice(10));
-    this.setState({
-          images: [...this.state.images, 'data:image/png;base64,'+ base64Img]
-        });
-    // this.saveAsync('image', this.state.images);
+        images: [...this.state.images, 'data:image/png;base64,'+ base64Img]
+      });
+      console.log("ADD IMAGES 0-" +this.state.images[0])
+      console.log("ADD IMAGES 1-" +this.state.images[1])
+    // if(this.state.images.length >= 2)
+        // this.saveAsync(this.state.images);
   }
 
->>>>>>> master2
   onSave() {
     // Save all images
     // docs: https://github.com/terrylinla/react-native-sketch-canvas
@@ -381,4 +355,3 @@ const pageCounterStyles = StyleSheet.create({
     fontWeight: 'bold'
   }
 });
-
