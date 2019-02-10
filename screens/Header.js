@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, Image} from 'react-native';
 
 export default class Header extends Component {
     render (){
         return (
             <View style={styles.container}>
-                <Text>Logo and Title here</Text>
+                {/* <View style={{flex: 1, background: 'red', width: 200, height: 200}} /> */}
+                <Image style={styles.imagefile} source={require('./assets/images/kenko2.png')}/>
             </View>
         )
     }
@@ -13,19 +14,16 @@ export default class Header extends Component {
 
 const styles = StyleSheet.create({
   
-    contentContainer: {
-      paddingVertical: 20,
-      backgroundColor: "#769EF5",
-    }
-    ,
     container: {
       flex: 1,
       justifyContent: 'space-between',
       alignItems: 'center',
-      backgroundColor: '#f3f3f3',
       marginTop: 0,
-      padding: 20,
-      height: 20,
+      paddingBottom: 10,
     },
+    imagefile: {
+        height: 50,
+        width: '60%',
+    }
   });
   
