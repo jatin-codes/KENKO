@@ -140,6 +140,7 @@ android {
 }
 
 dependencies {
+    implementation project(':react-native-linear-gradient')
     implementation project(':react-native-file-viewer')
     implementation project(':lottie-react-native')
     

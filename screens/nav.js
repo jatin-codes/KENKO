@@ -9,6 +9,7 @@
 
 import React from "react";
 import HomeScreen from "./homescreen.js";
+import Splash from "./splash.js";
 import Screen1 from "./screen1.js";
 import Screen2 from "./screen2.js";
 import Screen3 from "./screen3.js";
@@ -21,17 +22,20 @@ import DateTimePickerTester from "./dateTimePickerTester.js";
 import { createStackNavigator, createAppContainer } from "react-navigation";
 import DateTimePicker from "react-native-modal-datetime-picker";
 
-const MainNavigator = createStackNavigator({
-  Home: { screen: HomeScreen },
-  Screen1: { screen: Screen1 },
-  Screen2: { screen: Screen2 },
-  Screen3: { screen: Screen3 },
-  Screen4: { screen: Screen4 },
-  Screen5: { screen: Screen5 },
-  Cal: { screen: Cal },
-  Slot: { screen: Slot },
-  DateTimePickerTester: { screen: DateTimePickerTester }
-});
+const MainNavigator = createStackNavigator(
+  {
+    Home: { screen: HomeScreen },
+    Screen1: { screen: Screen1 },
+    Screen2: { screen: Screen2 },
+    Screen3: { screen: Screen3 },
+    Screen4: { screen: Screen4 },
+    Screen5: { screen: Screen5 },
+    Cal: { screen: Cal },
+    Slot: { screen: Slot },
+    DateTimePickerTester: { screen: DateTimePickerTester }
+  },
+  { initialRouteName: "Splash" }
+);
 
 const AppNav = createAppContainer(MainNavigator);
 
