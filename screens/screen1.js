@@ -8,6 +8,7 @@ import {
   StyleSheet,
   Dimensions,
   TouchableOpacity,
+  AsyncStorage
 } from 'react-native';
 import Carousel from 'react-native-snap-carousel';
 import {
@@ -60,6 +61,7 @@ export default class Screen2 extends Component {
       answersFN: new Array(13).fill(0),
       answersPN: 0,
       answersPTGE: 0,
+      images: []
     };
     this.onClear = this.onClear.bind(this);
     this.onSave = this.onSave.bind(this);
@@ -97,8 +99,21 @@ export default class Screen2 extends Component {
     }
 
     // TODO: save base64 to localstorage
-    console.warn("SUCCESS ", base64Img.slice(10));
+    //console.warn("SUCCESS ", base64Img.slice(10));
+    this.setState({
+          images: [...this.state.images, 'data:image/png;base64,'+ base64Img]
+        });
+    this.saveAsync(this.state.images);
   }
+  saveAsync = async (base64s) => {
+    let data = {
+      images: base64s,
+    }
+
+      await AsyncStorage.setItem('data', JSON.stringify(data));
+
+       this.props.navigation.navigate('Screen4');
+   };
 
   onSave() {
     // Save all images
@@ -107,7 +122,7 @@ export default class Screen2 extends Component {
       this[`sketchCanvas${item.index}`].getBase64('png', false, true, false, false, this.handleSaveImage);
     });
     // TODO: navigate home upon successful saving -- perhaps use promises?
-    this.props.navigation.navigate('Home');
+    //this.props.navigation.navigate('Home');
   }
 
   onClear(index) {
