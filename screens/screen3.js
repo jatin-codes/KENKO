@@ -11,7 +11,7 @@ const PICTURE_OPTIONS = {
   forceUpOrientation: true
 };
 
-export default class screen3 extends Component {
+export default class Screen3 extends Component {
   state = {
     loading: false,
     image: null,
