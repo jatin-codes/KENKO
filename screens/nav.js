@@ -8,12 +8,12 @@
  */
 
 import React from 'react';
-import HomeScreen from "./homescreen.js";
-import Splash from "./splash.js";
-import Screen1 from "./screen1.js";
-import Screen2 from "./screen2.js";
-import Screen3 from "./screen3.js";
-import Screen4 from "./screen4.js";
+import HomeScreen from "./homescreen";
+import Splash from "./splash";
+import Screen1 from "./screen1";
+import Screen2 from "./screen2";
+import Screen3 from "./screen3";
+import Screen4 from "./screen4";
 import Screen5 from './screen5';
 import Screen6 from './screen6';
 

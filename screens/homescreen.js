@@ -12,6 +12,13 @@ import {
 import UserInfo from './UserInfo';
 import Header from './Header';
 
+const ScreenBtn = ({ onPress, text }) => (
+  <TouchableOpacity onPress={onPress} style={styles.buttonStyle}>
+    <Text style={{ fontSize: 26, color: '#5580E1', fontWeight: 'bold' }}>{text}</Text>
+  </TouchableOpacity>
+);
+
+
 export default class HomeScreen extends Component {
 
   static navigationOptions = {
@@ -47,14 +54,17 @@ export default class HomeScreen extends Component {
         <TouchableOpacity onPress={() => this.props.navigation.navigate('Screen4')} style={styles.buttonStyle}>
           <Text> Screen 4 </Text>
         </TouchableOpacity>
+        <UserInfo navigation={this.props.navigation} />
+        <ScreenBtn onPress={() => this.props.navigation.navigate('Screen1')} text="Self Assessment" />
+        <ScreenBtn onPress={() => this.props.navigation.navigate('Screen2')} text="Schedule Reminders" />
+        <ScreenBtn onPress={() => this.props.navigation.navigate('Screen5')} text="Add Medication" />
+        <ScreenBtn onPress={() => this.props.navigation.navigate('Screen3')} text="Scan Ingredients" />
       </ScrollView>
     );
   }
 }
 
 const styles = StyleSheet.create({
-
-
   contentContainer: {
     paddingVertical: 20,
     backgroundColor: "#769EF5",
@@ -67,19 +77,24 @@ const styles = StyleSheet.create({
     backgroundColor: '#F5FCFF',
   },
   welcome: {
-    fontSize: 20,
+    fontSize: 28,
     textAlign: 'left',
-    margin: 5,
-    backgroundColor: '#f3f3f3',
+    color: '#FFFFFF',
+    fontWeight: 'bold',
+    marginLeft: 15,
+    marginRight: 20
   },
   buttonStyle: {
     alignSelf: 'stretch',
     backgroundColor: '#f3f3f3',
-    borderRadius:5,
-    borderWidth:1,
-    margin:'5%',
-    padding: '2%',
+    borderColor: '#C1c1c1',
+    elevation: 2,
     justifyContent: 'center',
-    height: 60
+    alignItems: 'center',
+    borderRadius: 5,
+    borderWidth: 1,
+    margin: 15,
+    padding: 5,
+    height: 60,
   }
 });
