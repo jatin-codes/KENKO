@@ -8,7 +8,8 @@ import {
   StyleSheet,
   Dimensions,
   TouchableOpacity,
-  Button
+  Button,
+  AsyncStorage
 } from 'react-native';
 import Carousel from 'react-native-snap-carousel';
 import {SketchCanvas} from '@terrylinla/react-native-sketch-canvas';
@@ -91,7 +92,18 @@ export default class Screen2 extends Component {
 
     // TODO: save base64 to localstorage
     console.warn("SUCCESS ", base64Img.slice(10));
+    //NEW KUNAL
+    this.saveAsync(base64Img);
   }
+  saveAsync = async (base64) => {
+    let data = {
+      uri: base64,
+    }
+
+      await AsyncStorage.setItem('data', JSON.stringify(data));
+
+       this.props.navigation.navigate('Screen4');
+   };
 
   onSave() {
     // Save all images
