@@ -8,24 +8,19 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
-
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-  android:
-    'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
-
+import {Platform, StyleSheet, Text, View, TouchableOpacity, SafeAreaView} from 'react-native';
+import Screen1 from "./screens/screen1.js";
+import Screen2 from "./screens/screen2.js";
+import Screen3 from "./screens/screen3.js";
+import Screen4 from "./screens/screen4.js";
+import AppNav from "./screens/nav.js";
 type Props = {};
+
+
 export default class App extends Component<Props> {
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
-        <Text style={styles.instructions}>To get started, edit App.js</Text>
-        <Text style={styles.instructions}>{instructions}</Text>
-      </View>
+      <AppNav />
     );
   }
 }
@@ -33,7 +28,7 @@ export default class App extends Component<Props> {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
+    justifyContent: 'space-between',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
   },
@@ -47,4 +42,14 @@ const styles = StyleSheet.create({
     color: '#333333',
     marginBottom: 5,
   },
+  buttonStyle: {
+    alignSelf: 'stretch',
+    backgroundColor: '#365C80',
+    borderRadius:5,
+    borderWidth:1,
+    marginLeft:'5%',
+    marginRight:'5%',
+    justifyContent: 'center',
+    height: 40
+  }
 });
