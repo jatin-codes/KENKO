@@ -18,7 +18,7 @@ const JointSketchesCard = ({ ref1, item }) => (
       strokeWidth={20}
       localSourceImage={item.image}
     />
-    <Text style={styles.dragBar}>TODO: add icon here to prompt user to drag</Text>
+    <Text style={styles.dragBar}> </Text>
   </View>
 );
 

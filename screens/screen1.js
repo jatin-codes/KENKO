@@ -8,6 +8,7 @@ import {
   StyleSheet,
   Dimensions,
   TouchableOpacity,
+  AsyncStorage
 } from 'react-native';
 import Carousel from 'react-native-snap-carousel';
 import {
@@ -26,6 +27,7 @@ import RAPID3FNCard from './components/RAPID3FN';
 import RAPID3PNCard from './components/RAPID3PN';
 import RAPID3PTGECard from './components/RAPID3PTGE';
 import JointSketchesCard from './components/JointSketchesCards';
+import LinearGradient from 'react-native-linear-gradient';
 
 // const sliderWidth = Dimensions.get('window').width;
 const margin = 20;
@@ -87,7 +89,8 @@ export default class Screen2 extends Component {
       answersFN: new Array(13).fill(-1),
       answersPN: 0,
       answersPTGE: 0,
-      results: null
+      results: null,
+      images: []
     };
     this.onClear = this.onClear.bind(this);
     this.onSave = this.onSave.bind(this);
@@ -145,8 +148,21 @@ export default class Screen2 extends Component {
     }
 
     // TODO: save base64 to localstorage
-    console.warn("SUCCESS ", base64Img.slice(10));
+    //console.warn("SUCCESS ", base64Img.slice(10));
+    this.setState({
+          images: [...this.state.images, 'data:image/png;base64,'+ base64Img]
+        });
+    this.saveAsync(this.state.images);
   }
+  saveAsync = async (base64s) => {
+    let data = {
+      images: base64s,
+    };
+
+      await AsyncStorage.setItem('data', JSON.stringify(data));
+
+       this.props.navigation.navigate('Screen4');
+   };
 
   onSave() {
     // Save all images
@@ -155,7 +171,7 @@ export default class Screen2 extends Component {
       this[`sketchCanvas${item.index}`].getBase64('png', false, true, false, false, this.handleSaveImage);
     });
     // TODO: navigate home upon successful saving -- perhaps use promises?
-    this.props.navigation.navigate('Home');
+    //this.props.navigation.navigate('Home');
   }
 
   onClear(index) {
@@ -191,7 +207,7 @@ export default class Screen2 extends Component {
     const FULL_SURVEY = START.concat(JOINT_SKETCHES, RAPID3_FN, RAPID3_PN, RAPID3_PTGE, END);
 
     return (
-      <View style={styles.container}>
+      <LinearGradient colors={['#769EF5', '#FEE2FF']} style={styles.container}>
         <TitleBar title="RAPID3 Assessment" />
         <PageCounter currentPage={this.state.currentIndex + 1} maxPages={FULL_SURVEY.length} />
         <Carousel
@@ -209,7 +225,7 @@ export default class Screen2 extends Component {
           showButtons={this.state.currentIndex === 1 || this.state.currentIndex === 2}
           onClear={() => this.onClear(this._carousel.currentIndex)}
         />
-      </View>
+      </LinearGradient>
     );
   }
 }
