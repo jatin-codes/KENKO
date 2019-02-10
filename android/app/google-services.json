@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "616837912356",
+    "firebase_url": "https://xdhacks-290aa.firebaseio.com",
+    "project_id": "xdhacks-290aa",
+    "storage_bucket": "xdhacks-290aa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:616837912356:android:6a749256221efe72",
+        "android_client_info": {
+          "package_name": "com.xdhacks"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "616837912356-ih5ekhs6ivjvhvh7iu4feo82fr43j6er.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAOGNbXA15whOT14YdojSxrG11NK_Pj_Xk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
