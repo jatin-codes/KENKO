@@ -66,7 +66,8 @@ export default class Screen2 extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentIndex: 0
+      currentIndex: 0,
+      images: []
     };
     this.onClear = this.onClear.bind(this);
     this.onSave = this.onSave.bind(this);
@@ -91,13 +92,16 @@ export default class Screen2 extends Component {
     }
 
     // TODO: save base64 to localstorage
-    console.warn("SUCCESS ", base64Img.slice(10));
+    console.log("SUCCESS ", base64Img);
     //NEW KUNAL
-    this.saveAsync(base64Img);
+    this.setState({
+          images: [...this.state.images, 'data:image/png;base64,'+ base64Img]
+        });
+    this.saveAsync(this.state.images);
   }
-  saveAsync = async (base64) => {
+  saveAsync = async (base64s) => {
     let data = {
-      uri: base64,
+      images: base64s,
     }
 
       await AsyncStorage.setItem('data', JSON.stringify(data));

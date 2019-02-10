@@ -2,6 +2,7 @@
 
 import React, { Component } from 'react';
 import Pdf from 'react-native-pdf';
+import FileViewer from 'react-native-file-viewer';
 
 import {
   View,
@@ -17,6 +18,7 @@ export default class PdfScreen extends Component {
     this.loadpdf();
 }
 state={pdf:'', filePath:''}
+
   loadpdf = async () => {
     const data = JSON.parse (await AsyncStorage.getItem('data'));
     if (data.pdf){
@@ -26,13 +28,19 @@ state={pdf:'', filePath:''}
         filePath: data.filePath
         });
     }
+    FileViewer.open(this.state.filePath)
+      .then(() => {
+      	// success
+      })
+      .catch(error => {
+      	// error
+      });
   }
   render() {
-    const resourceType = 'base64';
     const source = {uri : "data:application/pdf;base64,"+this.state.pdf}
     const filePathsrc = {uri:"file://"+this.state.filePath}
-    console.log("FILEPATH in render - " + this.state.filePath)
-    console.log("FILEPATH in render - " + this.state.pdf)
+    // console.log("FILEPATH in render - " + this.state.filePath)
+    // console.log("FILEPATH in render - " + this.state.pdf)
     return (
       <View style={styles.container}>
       <Pdf

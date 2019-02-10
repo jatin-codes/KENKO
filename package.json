@@ -10,6 +10,7 @@
     "@terrylinla/react-native-sketch-canvas": "^0.8.0",
     "react": "16.6.3",
     "react-native": "0.58.4",
+    "react-native-file-viewer": "^1.0.13",
     "react-native-html-to-pdf": "^0.6.0",
     "react-native-image-base64": "^0.1.3",
     "react-native-pdf": "^5.0.11",

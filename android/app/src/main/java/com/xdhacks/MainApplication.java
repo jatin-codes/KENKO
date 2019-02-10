@@ -3,6 +3,7 @@ package com.xdhacks;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.vinzscam.reactnativefileviewer.RNFileViewerPackage;
 import com.RNFetchBlob.RNFetchBlobPackage;
 import com.keyee.pdfview.PDFView;
 import com.hopding.pdflib.PDFLibPackage;
@@ -38,6 +39,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new RNFileViewerPackage(),
             new RCTPdfView(),
             new PDFView(),
             new RNFetchBlobPackage(),
