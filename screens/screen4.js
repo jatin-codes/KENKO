@@ -1,5 +1,3 @@
-/* @flow */
-
 import React, { Component } from 'react';
 import {
   View,
@@ -33,7 +31,7 @@ export default class Screen4 extends Component {
           images : data.images
           });
       }
-      console.log("IMAGE = " + this.state.images)
+      console.log("IMAGE = " + this.state.images[1])
     }
 
   render() {
@@ -57,13 +55,13 @@ export default class Screen4 extends Component {
       </View>
     );
   }
-  async createPDF() {
+  createPDF() {
     //const image= "file:///Users/User/Desktop/Xdhacks/xdhacks/screens/assets/images/xdhacks.png"
     let html=''
     html= '<div> <h1>TEST PDF</h1> '
     for(let i = 0; i < this.state.images.length ; i++ ){
       let base64String= this.state.images[i].replace(/\r?\n|\r/g, "").trim()
-      html= html + "<h2>Image"+ i +"</h2><img src=" + base64String +" /> "
+      html= html + "<h2>Image"+ (i+1) +"</h2><img style='width: 300px;height: 365px' src=" + base64String +" /> "
   }
     //console.log("RECEIVED DATA- "+ base64String)
   html= html +'</ div>'
@@ -74,22 +72,26 @@ export default class Screen4 extends Component {
     base64: true,
     directory: './assets'
   };
-  try {
-    const results = await RNHTMLtoPDF.convert(options)
-    //console.log(results.base64)
-    FileViewer.open(results.filePath)
-      .then(() => {
-      	// success
-      })
-      .catch(error => {
-      	// error
-      });
-    this.saveAsync(results.base64, results.filePath)
-  } catch (err) {
-    console.log("ERROR - " + err)
-    //alert(file.filePath);
-    console.error(err)
+  this.create(options);
+
   }
+  async create(options) {
+    try {
+      const results = await RNHTMLtoPDF.convert(options)
+      //console.log(results.base64)
+      FileViewer.open(results.filePath)
+        .then(() => {
+          // success
+        })
+        .catch(error => {
+          // error
+        });
+      this.saveAsync(results.base64, results.filePath)
+    } catch (err) {
+      console.log("ERROR - " + err)
+      //alert(file.filePath);
+      console.error(err)
+    }
   }
   saveAsync = async (base64, filePath) => {
     let data = {

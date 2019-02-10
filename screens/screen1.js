@@ -1,4 +1,3 @@
-/* @flow */
 
 import React, { Component } from 'react';
 import {
@@ -26,15 +25,12 @@ import RAPID3FNCard from './components/RAPID3FN';
 import RAPID3PNCard from './components/RAPID3PN';
 import RAPID3PTGECard from './components/RAPID3PTGE';
 import JointSketchesCard from './components/JointSketchesCards';
-
 // const sliderWidth = Dimensions.get('window').width;
 const margin = 20;
 const marginBottom = 0;
 const width = Dimensions.get('window').width;
 const itemWidth = width - (margin * 2);
 const sliderWidth = width;
-
-
 const ActionBar = ({ onSave, onClear }) => (
   <View style={actionBarStyles.container}>
     <TouchableOpacity
@@ -51,9 +47,7 @@ const ActionBar = ({ onSave, onClear }) => (
     </TouchableOpacity>
   </View>
 );
-
 export default class Screen2 extends Component {
-
   constructor(props) {
     super(props);
     this.state = {
@@ -68,11 +62,9 @@ export default class Screen2 extends Component {
     this.handleSelectAnswer = this.handleSelectAnswer.bind(this);
     this.handleSaveImage = this.handleSaveImage.bind(this);
   }
-
   static navigationOptions = {
     header: null ,
   };
-
   handleSelectAnswer(type, question, answer) {
     if (type === 'fn') {
       const newAnswersFN = this.state.answersFN.slice();
@@ -84,7 +76,6 @@ export default class Screen2 extends Component {
       this.setState({ answersPTGE: answer });
     }
   }
-
   handleSaveImage(err, base64Img) {
     if (err !== null) {
       Alert.alert(
@@ -97,24 +88,22 @@ export default class Screen2 extends Component {
       );
       return;
     }
-
     // TODO: save base64 to localstorage
-    //console.warn("SUCCESS ", base64Img.slice(10));
-    this.setState({
-          images: [...this.state.images, 'data:image/png;base64,'+ base64Img]
-        });
-    this.saveAsync(this.state.images);
+    console.log("SUCCESS ", base64Img.slice(100));
+    if(this.state.images.length < 2)
+      this.setState({
+            images: [...this.state.images, 'data:image/png;base64,'+ base64Img]
+          });
+    if(this.state.images.length >= 2)
+        this.saveAsync(this.state.images);
   }
   saveAsync = async (base64s) => {
     let data = {
       images: base64s,
     }
-
       await AsyncStorage.setItem('data', JSON.stringify(data));
-
        this.props.navigation.navigate('Screen4');
    };
-
   onSave() {
     // Save all images
     // docs: https://github.com/terrylinla/react-native-sketch-canvas
@@ -124,11 +113,9 @@ export default class Screen2 extends Component {
     // TODO: navigate home upon successful saving -- perhaps use promises?
     //this.props.navigation.navigate('Home');
   }
-
   onClear(index) {
     this[`sketchCanvas${index}`].clear();
   }
-
   _renderItem ({item}) {
     if (item.type === jointsTypes.JOINTS) {
       return <JointSketchesCard ref1={(c) => this[`sketchCanvas${item.index}`] = c} item={item} />;
@@ -140,8 +127,6 @@ export default class Screen2 extends Component {
       return <RAPID3PTGECard item={item} onSelect={this.handleSelectAnswer} />
     }
   }
-
-
   render() {
     return (
       <View style={styles.container}>
@@ -162,7 +147,6 @@ export default class Screen2 extends Component {
     );
   }
 }
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -182,7 +166,6 @@ const styles = StyleSheet.create({
     marginTop: margin,
   }
 });
-
 const actionBarStyles = StyleSheet.create({
   container: {
     flexDirection: 'row',
@@ -220,7 +203,6 @@ const actionBarStyles = StyleSheet.create({
     fontSize: 20
   }
 });
-
 const carouselStyles = StyleSheet.create({
   container: {
     flex: 1,
