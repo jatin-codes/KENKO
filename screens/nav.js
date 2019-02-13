@@ -16,8 +16,11 @@ import Screen3 from "./screen3";
 import Screen4 from "./screen4";
 import Screen5 from './screen5';
 import Screen6 from './screen6';
+import Cal from "./calendar.js";
+import Slot from "./slot.js";
+import DateTimePickerTester from "./dateTimePickerTester.js";
 
-import {createStackNavigator, createAppContainer} from 'react-navigation';
+import { createStackNavigator, createAppContainer } from "react-navigation";
 
 const MainNavigator = createStackNavigator({
   Home: {screen: HomeScreen},
@@ -28,6 +31,10 @@ const MainNavigator = createStackNavigator({
   Screen4: {screen: Screen4},
   Screen5: {screen: Screen5},
   Screen6: {screen: Screen6},
+  Cal: { screen: Cal },
+  Slot: { screen: Slot },
+  DateTimePickerTester: { screen: DateTimePickerTester }
+
 }, {initialRouteName: 'Splash'});
 
 const AppNav = createAppContainer(MainNavigator);
