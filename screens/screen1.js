@@ -68,12 +68,12 @@ const PageCounter = ({ currentPage, maxPages }) => (
 );
 const ActionBar = ({ showButtons, onClear, }) => (
   <View style={actionBarStyles.container}>
-    {showButtons && <TouchableOpacity
-      title="Clear"
-      style={actionBarStyles.buttonClear}
-      onPress={onClear}>
-      <Text style={actionBarStyles.buttonTextClear}>Clear</Text>
-    </TouchableOpacity>}
+    {/*{showButtons && <TouchableOpacity*/}
+      {/*title="Clear"*/}
+      {/*style={actionBarStyles.buttonClear}*/}
+      {/*onPress={onClear}>*/}
+      {/*<Text style={actionBarStyles.buttonTextClear}>Clear</Text>*/}
+    {/*</TouchableOpacity>}*/}
   </View>
 );
 export default class Screen1 extends Component {
@@ -234,7 +234,7 @@ export default class Screen1 extends Component {
 
     return (
       <LinearGradient colors={['#769EF5', '#FEE2FF']} style={styles.container}>
-        <TitleBar title="RAPID3 Assessment" />
+        <TitleBar title="Self Assessment Survey" />
         <PageCounter currentPage={this.state.currentIndex + 1} maxPages={FULL_SURVEY.length} />
         <Carousel
           ref={(c) => { this._carousel = c; }}

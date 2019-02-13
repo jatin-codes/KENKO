@@ -38,7 +38,7 @@ const InfoCard = ({ type, results, navigation, onSaveImage }) => {
           source={require('../assets/xd-done.json')}
           loop={false}
         />
-        <Text style={styles.title2}>RAPID3</Text>
+        <Text style={styles.title2}>Rheumatoid Arthritis</Text>
         <Text style={styles.title}>{START_TITLE}</Text>
         <Text style={styles.text}>{START_TEXT}</Text>
       </View>

@@ -5,9 +5,9 @@ import {
   StyleSheet
 } from 'react-native';
 
-const CardButton = ({ text, onPress, isSelected }) => (
-  <TouchableOpacity style={isSelected ? styles.containerSelected : styles.container} onPress={onPress}>
-    <Text style={isSelected ? styles.textSelected : styles.text}>{text}</Text>
+const CardButton = ({ text, onPress, isSelected, style = StyleSheet.create({}), textStyle = StyleSheet.create({}) }) => (
+  <TouchableOpacity style={[isSelected ? styles.containerSelected : styles.container, style]} onPress={onPress}>
+    <Text style={[isSelected ? styles.textSelected : styles.text, textStyle]}>{text}</Text>
   </TouchableOpacity>
 );
 

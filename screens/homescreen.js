@@ -11,6 +11,7 @@ import {
 } from 'react-native';
 import UserInfo from './UserInfo';
 import Header from './Header';
+import LinearGradient from 'react-native-linear-gradient';
 
 const ScreenBtn = ({ onPress, text }) => (
   <TouchableOpacity onPress={onPress} style={styles.buttonStyle}>
@@ -30,23 +31,28 @@ export default class HomeScreen extends Component {
   }
   render() {
     return (
-      <ScrollView style={styles.contentContainer}>
-        <Header/>
-        <UserInfo navigation={this.props.navigation} />
-        <ScreenBtn onPress={() => this.props.navigation.navigate('Screen1')} text="Self Assessment" />
-        <ScreenBtn onPress={() => this.props.navigation.navigate('Screen2')} text="Schedule Reminders" />
-        <ScreenBtn onPress={() => this.props.navigation.navigate('Screen5')} text="Add Medication" />
-        <ScreenBtn onPress={() => this.props.navigation.navigate('Screen3')} text="Scan Ingredients" />
-        <ScreenBtn onPress={() => this.props.navigation.navigate('Screen6')} text="Learn More" />
-      </ScrollView>
+      <LinearGradient colors={['#769EF5', '#FEE2FF']} style={styles.gradientContainer}>
+        <ScrollView style={styles.contentContainer}>
+          <Header/>
+          <UserInfo navigation={this.props.navigation} />
+          <ScreenBtn onPress={() => this.props.navigation.navigate('Screen1')} text="Self Assessment" />
+          <ScreenBtn onPress={() => this.props.navigation.navigate('Screen2')} text="Schedule Reminders" />
+          <ScreenBtn onPress={() => this.props.navigation.navigate('Screen5')} text="Add Medication" />
+          <ScreenBtn onPress={() => this.props.navigation.navigate('Screen3')} text="Scan Ingredients" />
+          <ScreenBtn onPress={() => this.props.navigation.navigate('Screen6')} text="Learn More" />
+        </ScrollView>
+      </LinearGradient>
     );
   }
 }
 
 const styles = StyleSheet.create({
+  gradientContainer: {
+    flex: 1
+  },
   contentContainer: {
     paddingVertical: 20,
-    backgroundColor: "#769EF5",
+    // backgroundColor: "#bde1f5",
   }
   ,
   container: {
